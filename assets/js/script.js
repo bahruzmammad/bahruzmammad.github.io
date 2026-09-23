@@ -3,8 +3,10 @@ $(function () {
 
   const $window = $(window);
   const $html = $("html");
-  const $sections = $("main section");
+  const $body = $("body");
+  const $sections = $("main section[id]");
   const $navLinks = $(".nav-list a");
+  const isBlogPage = $body.hasClass("blog-page");
   const $about = $("#about");
   const $aboutBody = $(".about-body");
   const $paragraphs = $aboutBody.find("p");
@@ -795,7 +797,15 @@ $(function () {
   }
 
   function updateActiveNav() {
-    if (!$sections.length || !$navLinks.length) return;
+    if (!$navLinks.length) return;
+
+    if (isBlogPage) {
+      $navLinks.removeClass("active");
+      $navLinks.filter(".nav-blog").addClass("active");
+      return;
+    }
+
+    if (!$sections.length) return;
     const scrollTop = $window.scrollTop();
     const marker = scrollTop + getHeaderHeight() + $window.height() * 0.3;
     let currentId = "";
@@ -1124,17 +1134,20 @@ $(function () {
   function initialize() {
     initializeTheme();
     setupMobileNavigation();
-    applySkillVisibility();
-    renderEducation();
-    updateAboutHeight();
-    updateAboutParagraphs();
     updateActiveNav();
-    initCertShowcase();
-    submitContactForm();
     window.requestAnimationFrame(function () {
       setupRevealObserver();
       setupProjectHover();
     });
+
+    if (isBlogPage) return;
+
+    applySkillVisibility();
+    renderEducation();
+    updateAboutHeight();
+    updateAboutParagraphs();
+    initCertShowcase();
+    submitContactForm();
     getGitHubRepos();
   }
 

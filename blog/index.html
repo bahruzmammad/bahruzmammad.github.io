@@ -14,14 +14,16 @@
         name="author"
         content="Bahruz Mammadov"
     >
+    <meta name="theme-color" content="#ffffff" id="theme-color">
     <meta
         name="robots"
         content="index, follow"
     >
     <link
         rel="canonical"
-        href="https://blog.bahruzmammad.github.io/"
+        href="https://bahruzmammad.github.io/blog/"
     >
+    <meta property="og:type" content="article">
     <meta
         property="og:title"
         content="Bahruz Mammadov Blog"
@@ -31,12 +33,12 @@
         content="Articles about software engineering and programming."
     >
     <meta
-        property="og:type"
-        content="article"
+        property="og:url"
+        content="https://bahruzmammad.github.io/blog/"
     >
     <meta
-        property="og:url"
-        content="https://blog.bahruzmammad.github.io/"
+        property="og:image"
+        content="https://bahruzmammad.github.io/assets/img/myimage.jpg"
     >
     <script type="application/ld+json">
     {
@@ -48,38 +50,132 @@
             "@type": "Person",
             "name": "Bahruz Mammadov"
         },
-        "url": "https://blog.bahruzmammad.github.io/"
+        "url": "https://bahruzmammad.github.io/blog/"
     }
     </script>
     <title>
-        Bahruz Mammadov Blog | Bahruz Mammadov Blog
+        Bahruz Mammadov Blog
     </title>
+    <link
+        rel="icon"
+        type="image/png"
+        href="../assets/img/favicon.png"
+        sizes="32x32"
+    >
+    
+    <script>
+      (function () {
+        try {
+          var theme = localStorage.getItem("theme");
+          var isDark = window.matchMedia(
+            "(prefers-color-scheme: dark)",
+          ).matches;
+
+          document.documentElement.dataset.theme =
+            theme || (isDark ? "dark" : "light");
+        } catch (error) {
+          document.documentElement.dataset.theme = "light";
+        }
+      })();
+    </script>
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/styles.css"
+    >
     <link
         rel="stylesheet"
         href="assets/css/blog.css"
     >
 </head>
 
-<body>
-<main class="blog-container">
-    <header class="blog-header">
-        <p class="blog-label">Blog</p>
+<body class="blog-page">
+    <a href="#main" class="skip-to-content"> Skip to main content </a>
+    
+    <header class="header-nav" role="banner">
+      <nav class="navbar container" aria-label="Main navigation">
+        <a href="../#home" class="logo" aria-label="Bahruz Mammadov — back to top">
+          Bahruz Mammadov
+        </a>
 
-        <h1>
-            Bahruz Mammadov Blog
-        </h1>
+        <div class="nav-right">
+          <button
+            type="button"
+            class="menu-toggle"
+            id="menu-toggle"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="main-menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
 
-        <p>
-            Notes on software engineering,
-            backend development, and programming.
-        </p>
+          <ul class="nav-list" id="main-menu" role="list">
+            <li>
+              <a href="../#home"> Home </a>
+            </li>
+
+            <li>
+              <a href="../#about"> About </a>
+            </li>
+
+            <li>
+              <a href="../#projects"> Projects </a>
+            </li>
+
+            <li>
+              <a href="../#skills"> Skills </a>
+            </li>
+
+            <li>
+              <a href="./" class="nav-blog active"> Blog </a>
+            </li>
+
+            <li>
+              <a href="../#contact"> Contact </a>
+            </li>
+          </ul>
+
+          <div class="theme-switcher">
+            <button
+              type="button"
+              class="theme-icon-button"
+              id="theme-toggle"
+              aria-label="Switch to dark mode"
+              aria-pressed="false"
+              title="Switch to dark mode"
+            >
+              <span class="theme-icon" aria-hidden="true"> &#9790; </span>
+            </button>
+          </div>
+        </div>
+      </nav>
     </header>
 
-    <section
-        class="posts"
-        aria-label="Blog posts"
-    >
-        <article class="post-card">
+    <main id="main">
+        
+      <section id="blog" class="section blog-section" aria-labelledby="blog-title">
+        <div class="container blog-container">
+          <header class="section-header blog-header reveal">
+            <span class="section-label">Blog</span>
+
+            <h1 id="blog-title">
+              Bahruz Mammadov Blog
+            </h1>
+
+            <p>
+              Notes on software engineering,
+              backend development, and programming.
+            </p>
+          </header>
+
+          <div
+            class="posts"
+            aria-label="Blog posts"
+          >
+            <article class="post-card reveal" data-delay="0">
     <p class="post-meta">
         September 12, 2026
         ·
@@ -100,7 +196,7 @@
         <span>Java</span><span>Backend</span>
     </div>
 </article>
-<article class="post-card">
+<article class="post-card reveal" data-delay="60">
     <p class="post-meta">
         September 12, 2026
         ·
@@ -121,7 +217,86 @@
         <span>General</span>
     </div>
 </article>
-    </section>
-</main>
+          </div>
+        </div>
+      </section>
+
+    </main>
+    
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <p>&#169; 2026 Bahruz Mammadov. All rights reserved.</p>
+
+        <nav class="footer-socials" aria-label="Social media links">
+          <a
+            href="https://github.com/bahruzmammad"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Bahruz Mammadov on GitHub (opens in new tab)"
+            title="GitHub"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              focusable="false"
+              width="17"
+              height="17"
+            >
+              <path
+                fill="currentColor"
+                d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.85 10.91.57.1.78-.25.78-.55 0-.27-.01-1.17-.01-2.13-3.19.69-3.86-1.35-3.86-1.35-.52-1.33-1.27-1.68-1.27-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.73-1.52-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.58.23 2.75.11 3.04.73.8 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.25 5.67.41.35.77 1.04.77 2.1 0 1.52-.01 2.74-.01 3.11 0 .3.2.66.79.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"
+              />
+            </svg>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/bahruzmammad"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Bahruz Mammadov on LinkedIn (opens in new tab)"
+            title="LinkedIn"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              focusable="false"
+              width="17"
+              height="17"
+            >
+              <path
+                fill="currentColor"
+                d="M6.94 8.5H3.2V20h3.74V8.5ZM5.07 3A2.17 2.17 0 1 0 5.06 7.34 2.17 2.17 0 0 0 5.07 3ZM20.8 13.42c0-3.47-1.85-5.09-4.32-5.09-1.99 0-2.88 1.09-3.38 1.85V8.5H9.36V20h3.74v-6.4c0-1.68.32-3.31 2.4-3.31 2.05 0 2.08 1.93 2.08 3.42V20h3.22v-6.58Z"
+              />
+            </svg>
+          </a>
+
+          <a
+            href="https://twitter.com/bahruzmammad"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Bahruz Mammadov on X / Twitter (opens in new tab)"
+            title="X / Twitter"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              focusable="false"
+              width="17"
+              height="17"
+            >
+              <path
+                fill="currentColor"
+                d="M18.9 2H22l-6.77 7.74L23.2 22h-6.24l-4.89-6.78L6.14 22H3l7.24-8.28L2.2 2h6.4l4.42 6.19L18.9 2Zm-1.1 17.87h1.72L7.27 4.02H5.43L17.8 19.87Z"
+              />
+            </svg>
+          </a>
+        </nav>
+      </div>
+    </footer>
+
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/script.js"></script>
+
 </body>
 </html>

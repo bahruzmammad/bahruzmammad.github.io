@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://blog.bahruzmammad.github.io/</loc>
+        <loc>https://bahruzmammad.github.io/blog/</loc>
     </url>
     <url>
-        <loc>https://blog.bahruzmammad.github.io/hello-java/</loc>
+        <loc>https://bahruzmammad.github.io/blog/hello-java/</loc>
     </url>
     <url>
-        <loc>https://blog.bahruzmammad.github.io/hello/</loc>
+        <loc>https://bahruzmammad.github.io/blog/hello/</loc>
     </url>
 </urlset>

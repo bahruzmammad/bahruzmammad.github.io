@@ -2,18 +2,18 @@
 <rss version="2.0">
 <channel>
     <title>Blog</title>
-    <link>https://blog.bahruzmammad.github.io/</link>
+    <link>https://bahruzmammad.github.io/blog/</link>
     <description>Portfolio Blog</description>
     <item>
         <title>Java Main Method</title>
-        <link>https://blog.bahruzmammad.github.io/hello-java/</link>
-        <guid>https://blog.bahruzmammad.github.io/hello-java/</guid>
+        <link>https://bahruzmammad.github.io/blog/hello-java/</link>
+        <guid>https://bahruzmammad.github.io/blog/hello-java/</guid>
         <description>Understanding the Java main method and the structure of a simple Java program.</description>
     </item>
     <item>
         <title>Hello World</title>
-        <link>https://blog.bahruzmammad.github.io/hello/</link>
-        <guid>https://blog.bahruzmammad.github.io/hello/</guid>
+        <link>https://bahruzmammad.github.io/blog/hello/</link>
+        <guid>https://bahruzmammad.github.io/blog/hello/</guid>
         <description>A first test post for my Markdown blog.</description>
     </item>
 </channel>
