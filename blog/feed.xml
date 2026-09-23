@@ -5,12 +5,6 @@
     <link>https://bahruzmammad.github.io/blog/</link>
     <description>Portfolio Blog</description>
     <item>
-        <title>Java Main Method</title>
-        <link>https://bahruzmammad.github.io/blog/hello-java/</link>
-        <guid>https://bahruzmammad.github.io/blog/hello-java/</guid>
-        <description>Understanding the Java main method and the structure of a simple Java program.</description>
-    </item>
-    <item>
         <title>Hello World</title>
         <link>https://bahruzmammad.github.io/blog/hello/</link>
         <guid>https://bahruzmammad.github.io/blog/hello/</guid>
