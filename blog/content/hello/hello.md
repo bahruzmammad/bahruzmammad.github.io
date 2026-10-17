@@ -1,73 +1,91 @@
 ---
-title: "Salam, necəsiz? Öz bloqumda ilk yazım"
-description: "Öz bloqumu niyə yaratdığım, proqramlaşdırma tarixindən öyrəndiklərim və proqram təminatının müasir iqtisadiyyatda rolu haqqında."
+title: "Hello, How Are You? | Bahruz Mammadov's Blog"
+description: "My first blog post about ideas, technology, society, learning, and writing. Learn why I made this website and what I plan to share."
 date: "2026-10-17"
 slug: "salam"
 tags:
-  - şəxsi
-  - proqramlaşdırma
-  - proqram mühəndisliyi
-  - texnologiya
-  - iqtisadiyyat
+  - personal blog
+  - ideas
+  - technology
+  - society
+  - writing
+  - learning
 ---
 
-# Salam, necəsiz?
+# Hello, how are you?
 
-Salam, xoş gəlmisiniz! Mən Bahruz Mammadovam və bu, şəxsi bloqumda paylaşdığım ilk yazıdır, ona görə istəyirəm ki, ilk yazım həm özümü bir qədər tanıtdığım, həm də bu saytı niyə yaratdığımı və burada nələr haqqında danışmaq istədiyimi səmimi şəkildə bölüşdüyüm bir başlanğıc olsun.
+Hello, welcome to my blog! My name is Bahruz Mammadov, and this is my first post on this website. I want to start by sharing why I made this blog, what I like to explore, and what I hope to share with you in the future. I do not want this to be only a place for technical notes. I want it to be a space for my thoughts, questions, ideas, and things I learn along the way.
 
-Açığı, əvvəllər müxtəlif platformalarda bloq yazmağı sınamışam, Medium və LinkedIn kimi saytların imkanlarına da baxmışam, amma nədənsə özümü tam rahat hiss etmirdim, elə bil başqasının evində oturub öz fikirlərimi yazırdım və orada müəyyən imkanlar olsa da, yazılarımı öz zövqümə uyğun təqdim etmək və məkanı istədiyim kimi dəyişmək imkanım məhdud qalırdı. Öz saytımı yaratmaq fikri isə mənə daha maraqlı gəldi, çünki burada dizaynı, məqalələrin görünüşünü, səhifələrin quruluşunu və gələcəkdə əlavə edəcəyim xüsusiyyətləri özüm müəyyənləşdirə bilərəm, yəni bu bloq yalnız yazılarımı paylaşdığım yer deyil, eyni zamanda proqramlaşdırma ilə bağlı öyrəndiklərimi tətbiq etdiyim və zamanla inkişaf etdirəcəyim şəxsi layihəmdir.
+## Why I made this blog
 
-Məncə, insan öyrəndiklərini yazıya çevirdikdə mövzunu daha yaxşı anlamağa başlayır, çünki bir məsələni özün üçün başa düşmək başqa, onu başqa birinə aydın şəkildə izah etmək isə tamam başqa prosesdir. Buna görə də burada yalnız bildiyim mövzuları deyil, araşdırdığım, öyrəndiyim və bəzən həll etmək üçün xeyli vaxt sərf etdiyim problemləri də paylaşmaq istəyirəm, beləliklə həm öz öyrənmə prosesimi sənədləşdirə, həm də eyni suallarla qarşılaşan insanlara faydalı ola bilərəm.
+I have tried writing on different platforms, including Medium and LinkedIn. These platforms are useful, and they make it easy to share ideas with other people. However, I wanted a space that felt more personal. I wanted to choose the design, the way my articles look, and how the website grows over time. That is why I decided to build my own website.
 
-## Özüm haqqında
+For me, this website is more than a place to publish articles. It is also a way to learn, try new things, and build something that belongs to me. I can change it when I have a new idea, add new features, and use what I learn to make it better. At the same time, I can keep my writing in one place instead of letting it get lost among posts on different platforms.
 
-Mən proqramlaşdırma və proqram mühəndisliyi ilə maraqlanıram, xüsusilə veb texnologiyalarını, Linux sistemini, terminal alətlərini, açıq mənbəli layihələri və proqramların arxasında işləyən mexanizmləri öyrənməyi sevirəm. LinkedIn profilimdə özümü junior proqram mühəndisi və frontend istiqamətinə fokuslanan full stack developer kimi təqdim etmişəm, bu istiqamətdə məqsədim yalnız hazır texnologiyalardan istifadə etməklə kifayətlənməmək, onların necə işlədiyini anlamaq, daha yaxşı həllər hazırlamaq və zamanla daha mürəkkəb layihələr üzərində işləyə biləcək səviyyəyə çatmaqdır.
+I also believe that writing can help us understand things better. Understanding an idea in our own minds is one thing, but explaining it to another person is a different challenge. When I write about a subject, I have to think about what I know, what I still need to learn, and how to explain it clearly. I want to use this blog to share that process with others.
 
-Proqramlaşdırmanı daim öyrənilən bir sahə hesab edirəm, çünki yeni texnologiyalar yaranır, əvvəlki yanaşmalar dəyişir, layihələr böyüdükcə fərqli problemlər ortaya çıxır və bəzən düzgün həll tapmaq üçün sənədləri oxumaq, kodu yoxlamaq və bir neçə fərqli üsulu sınaqdan keçirmək lazım gəlir. Burada hər şeyi bilən mütəxəssis obrazı yaratmaq əvəzinə, həqiqətən öyrəndiklərimi, araşdırmalarımı və inkişaf prosesimi paylaşmaq istəyirəm.
+## A little about me
 
-## Proqramlaşdırmanın tarixi və bu gün istifadə etdiyimiz kompüterlər
+My public [LinkedIn profile](https://www.linkedin.com/in/bahruzmammad) describes me as a junior software engineer and a frontend-focused full-stack developer. I am learning about programming and building my skills. I have also shared Java learning notes and beginner tutorials on LinkedIn. These posts help me record what I study and explain it in a simple way.
 
-Bu gün istifadə etdiyimiz kompüterlər, telefonlar və proqramlar uzun bir texnoloji inkişaf tarixinin nəticəsidir, çünki hesablamaları avtomatlaşdırmaq ideyası elektron kompüterlərdən çox əvvəl yaranmışdı. XIX əsrdə Charles Babbage mexaniki hesablama maşınları üzərində işləyirdi və onun 1834-cü ildə layihələndirməyə başladığı Analytical Engine müxtəlif hesablamaları aparmaq, məlumatları saxlamaq və təlimatlar ardıcıllığı ilə işləmək üçün nəzərdə tutulan ümumi məqsədli hesablama maşını ideyasını irəli aparırdı.
+I do not want to present myself as an expert who knows everything. I want to share what I really learn, the questions I have, and the ideas I find worth exploring. Some topics may be familiar to me, while others may be new. I think it is useful to show this process honestly instead of pretending to know more than I do.
 
-![Charles Babbage tərəfindən layihələndirilmiş Analytical Engine-in sınaq modelinin fotosu](https://upload.wikimedia.org/wikipedia/commons/0/0d/Analytical_engine_trial_model%2C_Charles_Babbage%2C_1834-1871_-_Science_Museum%2C_London_-_DSC05565.jpg)
+At the same time, technology is only one part of what I want to write about. I am interested in ideas, society, culture, the internet, and the way people think about the world. I also want to become better at writing and creating content. Over time, I hope this blog will help me build my own voice and share ideas in a clear and useful way.
 
-_Şəkil: Analytical Engine-in sınaq modeli, Science Museum, London. Foto və lisenziya məlumatları: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Analytical_engine_trial_model,_Charles_Babbage,_1834-1871_-_Science_Museum,_London_-_DSC05565.jpg)._
+## Programming, history, and ideas
 
-Bu tarixdə Ada Lovelace-in də xüsusi yeri var, çünki o, 1843-cü ildə Analytical Engine haqqında dərc olunan texniki məqaləyə əlavə etdiyi qeydlərdə maşının Bernoulli ədədlərini hesablamaq üçün izləyə biləcəyi əməliyyatları izah etmiş, eyni zamanda belə maşınların yalnız sadə hesablamalar aparmaqla məhdudlaşmaya biləcəyini düşünmüşdü. Analytical Engine Babbage-in sağlığında tam şəkildə qurulmasa da, bu layihə və Lovelace-in qeydləri proqramlaşdırmanın tarixini başa düşmək üçün vacib nümunələrdir, çünki burada əsas fikir yalnız mexaniki hesablama aparmaq deyil, maşına əvvəlcədən müəyyənləşdirilmiş təlimatları yerinə yetirməyi öyrətmək idi.
+One subject I find interesting is the history of computers. The computers and phones we use today did not appear in one day. They are part of a long history of people trying to make work easier, solve problems, and find new ways to use information.
 
-Elektron kompüterlərin yaranması ilə hesablama imkanları sürətlə artdı, proqramlar böyüdü və daha mürəkkəb sistemlərin hazırlanmasına ehtiyac yarandı, nəticədə proqram təminatının yazılması artıq yalnız kod yaratmaqdan ibarət olmayan mühəndislik fəaliyyətinə çevrildi. 1968-ci ildə NATO-nun Garmisch şəhərində keçirdiyi proqram mühəndisliyi konfransı bu sahənin tarixində mühüm mərhələlərdən biri oldu, çünki orada proqramların vaxtında hazırlanması, etibarlılığı, layihələndirilməsi və texniki xidmət kimi problemlər müzakirə edildi. Bu yanaşma proqram mühəndisliyinin əsas məqsədini yaxşı izah edir: işləyən kod yazmaqla yanaşı, etibarlı, başa düşülən, təhlükəsiz və gələcəkdə dəyişdirilməsi mümkün olan proqram sistemləri yaratmaq.
+In the nineteenth century, Charles Babbage designed machines that could do calculations. Around 1834, he started work on the idea of the Analytical Engine. It was planned as a machine that could follow instructions, store numbers, and carry out different operations. The complete machine was not built during his lifetime, but the idea was important because it went beyond a machine that could do only one type of calculation.
 
-Mənbələr: [Computer History Museum: Babbage Engine](https://www.computerhistory.org/babbage/history) və [NATO konfransının 1968-ci il hesabatı](https://homepages.cs.ncl.ac.uk/brian.randell/NATO/nato1968.PDF).
+Ada Lovelace also played an important role in this history. In 1843, she published her notes about the Analytical Engine. These notes included steps for calculating Bernoulli numbers. She also thought about how machines might work with symbols and ideas beyond numbers. This makes her work an important part of the history of programming.
 
-## Proqram təminatı və müasir iqtisadiyyat
+The history of computers shows that new ideas often grow over a long time. A machine or idea may not be ready for its own time, but it can still help people think about what may be possible in the future. I find this kind of history interesting because it connects technology with human thought, creativity, and the problems people try to solve.
 
-Bu gün proqram təminatı yalnız kompüterin işləməsi üçün lazım olan texniki vasitə deyil, həm də şirkətlərin xidmət göstərdiyi, məhsullarını satdığı, iş proseslərini avtomatlaşdırdığı və rəqəmsal bazarlarda rəqabət apardığı əsas vasitələrdən biridir. Bulud xidmətləri, ödənişli proqramlar, onlayn mağazalar, sosial şəbəkələr və rəqəmsal platformalar proqram təminatının iqtisadi dəyər yaratmasının müxtəlif nümunələridir, çünki onların fəaliyyəti istifadəçiləri, məlumatları, infrastruktur və xidmətləri bir araya gətirir.
+Software engineering also has an important history. As computers became more useful, software became larger and more complex. Writing code was no longer enough. People also had to think about how to plan software, test it, fix it, and make it easier to change. In 1968, a NATO conference in Germany brought people together to discuss these problems. Their work helped make software engineering a more important topic.
 
-Kapitalist iqtisadiyyatda proqram təminatı həm məhsul, həm də gəlir əldə etmək üçün istifadə edilən infrastruktur ola bilər, məsələn, bir şirkət proqramı abunəliklə sata, reklam vasitəsilə gəlir əldə edə və ya başqa müəssisələrə bulud xidmətləri göstərə bilər. Bununla yanaşı, rəqəmsal platformaların bazarda böyük güc toplaması, istifadəçi məlumatlarından necə istifadə etməsi və texnologiyanın yaratdığı faydaların kimlər arasında bölüşdürülməsi kimi məsələlər də müzakirə olunur, buna görə proqram mühəndisliyini yalnız texniki baxımdan deyil, iqtisadi və sosial tərəfləri ilə də öyrənmək maraqlıdır.
+For me, these events are not only dates and names to remember. They can help us ask bigger questions. How do new ideas become real products? Why do some technologies change society? What makes a tool useful? And how do the choices people make when building technology affect other people?
 
-Açıq mənbəli proqramlar bu mənzərənin başqa bir hissəsidir, çünki onlar insanlara kodu araşdırmaq, dəyişdirmək və layihələrin inkişafına töhfə vermək imkanı verir, eyni zamanda açıq mənbəli texnologiyalardan kommersiya məhsulları və xidmətləri yaratmaq da mümkündür. Mənim üçün burada maraqlı olan sual texnologiyanın sadəcə necə işləməsi deyil, həm də hansı problemi həll etməsi, kimə fayda verməsi və istifadə olunduğu iqtisadi sistemə necə təsir göstərməsidir.
+## Software and the world around us
 
-Mənbələr: [Liang və Aroles, _Charting Platform Capitalism_](https://onlinelibrary.wiley.com/doi/10.1111/ntwe.12234) və [Langley və Leyshon, _Platform Capitalism_](https://doi.org/10.2218/finsoc.v3i1.1936).
+Software is now part of many parts of daily life. We use it to talk to people, study, work, buy things, make payments, and share information. Many companies also depend on software to sell products, provide services, and manage their work. This means software is not only a technical subject. It is also part of the economy and society.
 
-## Bu bloqda nələr olacaq?
+For example, a company may sell software through a monthly subscription. Another company may offer free services and earn money from advertising. Some companies provide cloud services that other businesses use to store data and run their systems. Each model creates a different relationship between users, companies, information, and money.
 
-Burada proqramlaşdırma, proqram mühəndisliyi, Linux, terminal alətləri, veb texnologiyaları, açıq mənbəli layihələr, süni intellekt və texnologiyanın iqtisadiyyata təsiri haqqında yazılar paylaşmağı planlaşdırıram, bəzən konkret texniki problemi və onun həllini izah edəcəyəm, bəzən isə texnologiyaların tarixini araşdıraraq onların bugünkü sistemlərə necə təsir etdiyindən danışacağam. Yazılarımın hamısının eyni mövzuda olması vacib deyil, çünki bu bloq həm də maraq dairəmin necə dəyişdiyini, hansı layihələr üzərində işlədiyimi və öyrənmə prosesimdə hansı nəticələrə gəldiyimi göstərəcək.
+These systems also raise questions. Who owns the platforms we use? How do companies use the information they collect? Who gains the most from new technology? Can open-source software give people more freedom to study and change the tools they use? These are questions about technology, but they are also questions about power, work, money, and society.
 
-Məqsədim mürəkkəb anlayışları olduğundan çətin göstərmək deyil, əksinə, onları mümkün qədər aydın izah etmək, vacib məlumatların mənbələrini göstərmək və öyrəndiklərimi başqalarının da faydalana biləcəyi şəkildə paylaşmaqdır. Zamanla bu saytın həm şəxsi qeydlərimi topladığım arxivə, həm də texnologiya haqqında daha dərindən düşünmək və yazmaq üçün özümə məxsus bir məkana çevrilməsini istəyirəm.
+Open-source software is especially interesting because people can study its code, change it, and help improve it, depending on the project's license. It can also support commercial products and services. This shows that software can be used in different ways, with different goals and values.
 
-## Əlaqədə qalaq
+I want to explore these questions in the future. I do not expect to have an answer for every question. Sometimes, the most useful thing is to study an idea, look at different views, and explain why the question matters.
 
-İlk yazımı oxuduğunuz üçün təşəkkür edirəm, əgər proqramlaşdırma, texnologiya və gələcəkdə burada paylaşacağım mövzular sizə də maraqlıdırsa, məni X və LinkedIn platformalarında izləyə, yeni yazılarım və layihələrim haqqında paylaşımlarımdan xəbər tuta bilərsiniz.
+## What I want to share here
 
-- [X profilim](https://x.com/bahruzmmad)
-- [LinkedIn profilim](https://www.linkedin.com/in/bahruzmammad)
+I want this blog to grow with me. I may write about programming, software, the internet, digital platforms, society, culture, economics, books, and other ideas that catch my attention. Some posts will explain a technical topic or show how to solve a problem. Others will be more about theory, questions, opinions, and the way we understand the world.
 
-### Mənbələr
+I also want to share tutorials when I learn something that may help another person. These tutorials may include simple steps, examples, and notes about problems I meet. But I do not want every post to be a tutorial, and I do not want the whole blog to be about technology. Sometimes I may write about an idea without trying to turn it into a practical guide.
 
-- [Computer History Museum: A Brief History of the Babbage Engine](https://www.computerhistory.org/babbage/history)
-- [Science Museum Group: Ada Lovelace](https://collection.sciencemuseumgroup.org.uk/people/cp38764)
-- [NATO: Software Engineering konfransının hesabatı, 1968](https://homepages.cs.ncl.ac.uk/brian.randell/NATO/nato1968.PDF)
-- [Liang və Aroles: Charting Platform Capitalism](https://onlinelibrary.wiley.com/doi/10.1111/ntwe.12234)
-- [Langley və Leyshon: Platform Capitalism](https://doi.org/10.2218/finsoc.v3i1.1936)
-- [Wikimedia Commons: Analytical Engine-in sınaq modeli və şəkil lisenziyası](https://commons.wikimedia.org/wiki/File:Analytical_engine_trial_model,_Charles_Babbage,_1834-1871_-_Science_Museum,_London_-_DSC05565.jpg)
-- [LinkedIn profilim](https://www.linkedin.com/in/bahruzmammad)
+I am still finding the best way to do this, and my interests may change over time. That is fine. I would rather let the blog grow naturally than choose a narrow topic just to make every article look the same. My goal is to make content that is honest, clear, and worth reading.
+
+I hope that, over time, this website will become a place where I can share more than what I learn. I want it to help me develop as a writer and content creator, explore different subjects, and build a clear personal identity through my work.
+
+## Let's stay in touch
+
+Thank you for reading my first post. If my ideas or future articles interest you, you can find me on these platforms. I will share new projects, learning notes, and other work there as well.
+
+- [My portfolio and personal website](https://bahruzmammad.github.io/)
+- [My LinkedIn profile](https://www.linkedin.com/in/bahruzmammad)
+- [My X profile](https://x.com/bahruzmammad)
+- [My GitHub profile](https://github.com/bahruzmammad)
+
+I am glad you are here. This is the beginning of the blog, and I look forward to seeing what it becomes.
+
+© 2026 Bahruz Mammadov. All rights reserved.
+
+## Recommended reading
+
+If you want to learn more about the history of computers, software engineering, and the role of digital platforms in society, these are useful places to start:
+
+- [A Brief History of the Babbage Engine](https://www.computerhistory.org/babbage/history) by the Computer History Museum.
+- [The NATO Software Engineering Conference Report (1968)](https://scrummanager.com/files/nato1968e.pdf), a report about early questions in software engineering.
+- [Charting Platform Capitalism: Definitions, Concepts and Ideologies](https://doi.org/10.1111/ntwe.12234), a research paper about digital platforms, work, and the economy.
+- [Platform Capitalism: The Intermediation and Capitalisation of Digital Economic Circulation](https://doi.org/10.2218/finsoc.v3i1.1936), a paper by Paul Langley and Andrew Leyshon about digital platforms and economic activity.
