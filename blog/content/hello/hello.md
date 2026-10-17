@@ -1,74 +1,73 @@
 ---
-title: "Salam, necəsiz?"
-description: "Özüm, şəxsi bloqumun yaranma səbəbi, texnologiyaya marağım və proqram təminatının keçmişdən bu günə qədər inkişafı haqqında ilk qeydim."
+title: "Salam, necəsiz? Öz bloqumda ilk yazım"
+description: "Öz bloqumu niyə yaratdığım, proqramlaşdırma tarixindən öyrəndiklərim və proqram təminatının müasir iqtisadiyyatda rolu haqqında."
 date: "2026-10-17"
 slug: "salam"
 tags:
   - şəxsi
-  - texnologiya
+  - proqramlaşdırma
   - proqram mühəndisliyi
-  - internet tarixi
+  - texnologiya
+  - iqtisadiyyat
 ---
 
 # Salam, necəsiz?
 
-Açığı, bir müddətdir müxtəlif platformalarda bloq yazmağı sınayırdım, Medium və LinkedIn kimi platformalarda yazılar paylaşmağın daha rahat olacağını düşünürdüm, amma nədənsə orada özümü tam sərbəst hiss etmirdim, sanki başqasının evində oturub öz fikirlərimi bölüşürmüşəm kimi gəlirdi. Burada isə vəziyyət fərqlidir, çünki saytın dizaynını, yazıların görünüşünü və məzmunun təqdim olunma formasını özüm müəyyən edə, istədiyim dəyişiklikləri edə və zamanla zövqümə uyğun inkişaf etdirə bilirəm. Buna görə də öz bloqumu yaratmaq mənə daha maraqlı gəldi və bu saytı internetdə özümə məxsus bir məkan kimi qurmaq qərarına gəldim.
+Salam, xoş gəlmisiniz! Mən Bahruz Mammadovam və bu, şəxsi bloqumda paylaşdığım ilk yazıdır, ona görə istəyirəm ki, ilk yazım həm özümü bir qədər tanıtdığım, həm də bu saytı niyə yaratdığımı və burada nələr haqqında danışmaq istədiyimi səmimi şəkildə bölüşdüyüm bir başlanğıc olsun.
 
-Mən Bəhruz Mamedovam, internetdə isə Bahruz Mammadov adından istifadə edirəm. Texnologiya, proqramlaşdırma və internetin inkişafı maraq dairəmdədir, buna görə də bu bloqda araşdırdığım mövzuları, öyrəndiklərimi və şəxsi düşüncələrimi paylaşmaq istəyirəm. Məqsədim özümü hər sahədə mütəxəssis kimi göstərmək deyil, maraqlı hesab etdiyim məsələləri daha dərindən araşdırmaq, etibarlı mənbələrdən öyrənmək və əldə etdiyim məlumatları öz sözlərimlə bölüşməkdir. Eyni zamanda, yazılarımın zamanla toplanacağı, gələcəkdə özümün də geri qayıdıb oxuya biləcəyim və başqa insanların da faydalana biləcəyi bir arxiv yaratmaq istəyirəm.
+Açığı, əvvəllər müxtəlif platformalarda bloq yazmağı sınamışam, Medium və LinkedIn kimi saytların imkanlarına da baxmışam, amma nədənsə özümü tam rahat hiss etmirdim, elə bil başqasının evində oturub öz fikirlərimi yazırdım və orada müəyyən imkanlar olsa da, yazılarımı öz zövqümə uyğun təqdim etmək və məkanı istədiyim kimi dəyişmək imkanım məhdud qalırdı. Öz saytımı yaratmaq fikri isə mənə daha maraqlı gəldi, çünki burada dizaynı, məqalələrin görünüşünü, səhifələrin quruluşunu və gələcəkdə əlavə edəcəyim xüsusiyyətləri özüm müəyyənləşdirə bilərəm, yəni bu bloq yalnız yazılarımı paylaşdığım yer deyil, eyni zamanda proqramlaşdırma ilə bağlı öyrəndiklərimi tətbiq etdiyim və zamanla inkişaf etdirəcəyim şəxsi layihəmdir.
 
-## Proqramlaşdırmanın başlanğıcı
+Məncə, insan öyrəndiklərini yazıya çevirdikdə mövzunu daha yaxşı anlamağa başlayır, çünki bir məsələni özün üçün başa düşmək başqa, onu başqa birinə aydın şəkildə izah etmək isə tamam başqa prosesdir. Buna görə də burada yalnız bildiyim mövzuları deyil, araşdırdığım, öyrəndiyim və bəzən həll etmək üçün xeyli vaxt sərf etdiyim problemləri də paylaşmaq istəyirəm, beləliklə həm öz öyrənmə prosesimi sənədləşdirə, həm də eyni suallarla qarşılaşan insanlara faydalı ola bilərəm.
 
-![Charles Babbage və Ada Lovelace ilə əlaqəli Analitik Maşının tarixi təsviri](https://susannahfullerton.com.au/wp-content/uploads/2019/03/Ada-Lovelace-and-the-analytical-engine-1000x562.jpg)
+## Özüm haqqında
 
-*Şəkil mənbəyi: [Susannah Fullerton, Ada Lovelace və Analitik Maşın](https://susannahfullerton.com.au/ada-lovelace-the-analytical-engine/).*
+Mən proqramlaşdırma və proqram mühəndisliyi ilə maraqlanıram, xüsusilə veb texnologiyalarını, Linux sistemini, terminal alətlərini, açıq mənbəli layihələri və proqramların arxasında işləyən mexanizmləri öyrənməyi sevirəm. LinkedIn profilimdə özümü junior proqram mühəndisi və frontend istiqamətinə fokuslanan full stack developer kimi təqdim etmişəm, bu istiqamətdə məqsədim yalnız hazır texnologiyalardan istifadə etməklə kifayətlənməmək, onların necə işlədiyini anlamaq, daha yaxşı həllər hazırlamaq və zamanla daha mürəkkəb layihələr üzərində işləyə biləcək səviyyəyə çatmaqdır.
 
-Bu gün istifadə etdiyimiz kompüterlərin, proqramların və rəqəmsal xidmətlərin arxasında uzun bir inkişaf tarixi dayanır və bu tarixi yalnız elektron kompüterlərin yaranması ilə başlamaq düzgün olmazdı, çünki hesablamaları avtomatlaşdırmaq və maşınlara əvvəlcədən müəyyən edilmiş qaydalar əsasında tapşırıqlar yerinə yetirtmək ideyası müasir kompüterlərdən xeyli əvvəl meydana çıxmışdı. XIX əsrdə ingilis riyaziyyatçısı Charles Babbage mexaniki hesablama maşınları üzərində işləyirdi və onun Analitik Maşın layihəsi müxtəlif əməliyyatları müəyyən edilmiş təlimatlar əsasında yerinə yetirə bilən ümumi təyinatlı hesablama qurğusu yaratmaq cəhdi idi.
+Proqramlaşdırmanı daim öyrənilən bir sahə hesab edirəm, çünki yeni texnologiyalar yaranır, əvvəlki yanaşmalar dəyişir, layihələr böyüdükcə fərqli problemlər ortaya çıxır və bəzən düzgün həll tapmaq üçün sənədləri oxumaq, kodu yoxlamaq və bir neçə fərqli üsulu sınaqdan keçirmək lazım gəlir. Burada hər şeyi bilən mütəxəssis obrazı yaratmaq əvəzinə, həqiqətən öyrəndiklərimi, araşdırmalarımı və inkişaf prosesimi paylaşmaq istəyirəm.
 
-1843-cü ildə Ada Lovelace həmin maşın haqqında yazılmış məqaləyə geniş qeydlər əlavə etdi və Bernoulli ədədlərinin hesablanması üçün təlimat ardıcıllığını təsvir etdi. Bu iş tarixdə ilk nəşr olunmuş kompüter proqramı nümunələrindən biri kimi tanınır, çünki Lovelace maşınların gələcəkdə yalnız rəqəmlərlə hesablamalar aparmaqla məhdudlaşmayacağını, müəyyən qaydalar əsasında başqa simvolları da emal edə biləcəyini irəli sürmüşdü. Analitik Maşın onun yaşadığı dövrdə tam şəkildə qurulmasa da, həmin ideyalar proqramlaşdırma tarixinin mühüm mərhələlərindən birinə çevrildi.
+## Proqramlaşdırmanın tarixi və bu gün istifadə etdiyimiz kompüterlər
 
-XX əsrdə elektron kompüterlərin yaranması proqramlaşdırmanı nəzəri ideyalardan praktik mühəndislik fəaliyyətinə çevirdi. İlk kompüterlərdə proqram hazırlamaq üçün maşının əmrlərini dərindən başa düşmək, bəzən fiziki bağlantıları dəyişmək və aşağı səviyyəli təlimatlarla işləmək lazım gəlirdi, lakin FORTRAN və COBOL kimi proqramlaşdırma dillərinin yaranması daha mürəkkəb proqramların hazırlanmasını asanlaşdırdı. Sonrakı illərdə fərdi kompüterlərin yayılması, internetin inkişafı və veb texnologiyalarının meydana çıxması proqram təminatını böyük təşkilatların istifadə etdiyi xüsusi vasitələrdən gündəlik həyatımızın ayrılmaz hissəsinə çevirdi.
+Bu gün istifadə etdiyimiz kompüterlər, telefonlar və proqramlar uzun bir texnoloji inkişaf tarixinin nəticəsidir, çünki hesablamaları avtomatlaşdırmaq ideyası elektron kompüterlərdən çox əvvəl yaranmışdı. XIX əsrdə Charles Babbage mexaniki hesablama maşınları üzərində işləyirdi və onun 1834-cü ildə layihələndirməyə başladığı Analytical Engine müxtəlif hesablamaları aparmaq, məlumatları saxlamaq və təlimatlar ardıcıllığı ilə işləmək üçün nəzərdə tutulan ümumi məqsədli hesablama maşını ideyasını irəli aparırdı.
 
-## Proqram mühəndisliyi necə formalaşdı?
+![Charles Babbage tərəfindən layihələndirilmiş Analytical Engine-in sınaq modelinin fotosu](https://upload.wikimedia.org/wikipedia/commons/0/0d/Analytical_engine_trial_model%2C_Charles_Babbage%2C_1834-1871_-_Science_Museum%2C_London_-_DSC05565.jpg)
 
-Proqramların mürəkkəbliyi artdıqca yalnız işləyən kod yazmaq kifayət etmədi, çünki böyük sistemlərin etibarlı, təhlükəsiz, dəyişdirilə bilən və uzun müddət dəstəklənə bilən olması da vacib idi. 1960-cı illərdə bir çox proqram layihəsinin gecikməsi, nəzərdə tutulandan baha başa gəlməsi və gözlənilən nəticəni verməməsi proqram təminatının hazırlanmasında daha sistemli yanaşmaya ehtiyac olduğunu göstərirdi. Bu problemlər 1968-ci ildə NATO tərəfindən təşkil olunan proqram mühəndisliyi konfransında geniş müzakirə edildi və proqram mühəndisliyinin ayrıca peşəkar sahə kimi inkişafına təsir göstərdi.
+_Şəkil: Analytical Engine-in sınaq modeli, Science Museum, London. Foto və lisenziya məlumatları: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Analytical_engine_trial_model,_Charles_Babbage,_1834-1871_-_Science_Museum,_London_-_DSC05565.jpg)._
 
-Bu gün proqram mühəndisliyi yalnız proqramlaşdırma dilini bilməkdən ibarət deyil, çünki proqramın arxitekturasını planlaşdırmaq, məlumatları düzgün idarə etmək, testlər yazmaq, təhlükəsizlik risklərini nəzərə almaq və kodun gələcəkdə dəyişdirilməsini asanlaşdırmaq da işin mühüm hissələridir. Məncə, bu tarixi bilmək texnologiyanın necə inkişaf etdiyini anlamaqla yanaşı, proqram hazırlamağın niyə sadəcə kod yazmaqdan daha geniş bir fəaliyyət olduğunu da göstərir.
+Bu tarixdə Ada Lovelace-in də xüsusi yeri var, çünki o, 1843-cü ildə Analytical Engine haqqında dərc olunan texniki məqaləyə əlavə etdiyi qeydlərdə maşının Bernoulli ədədlərini hesablamaq üçün izləyə biləcəyi əməliyyatları izah etmiş, eyni zamanda belə maşınların yalnız sadə hesablamalar aparmaqla məhdudlaşmaya biləcəyini düşünmüşdü. Analytical Engine Babbage-in sağlığında tam şəkildə qurulmasa da, bu layihə və Lovelace-in qeydləri proqramlaşdırmanın tarixini başa düşmək üçün vacib nümunələrdir, çünki burada əsas fikir yalnız mexaniki hesablama aparmaq deyil, maşına əvvəlcədən müəyyənləşdirilmiş təlimatları yerinə yetirməyi öyrətmək idi.
 
-## Proqram təminatı və iqtisadiyyat
+Elektron kompüterlərin yaranması ilə hesablama imkanları sürətlə artdı, proqramlar böyüdü və daha mürəkkəb sistemlərin hazırlanmasına ehtiyac yarandı, nəticədə proqram təminatının yazılması artıq yalnız kod yaratmaqdan ibarət olmayan mühəndislik fəaliyyətinə çevrildi. 1968-ci ildə NATO-nun Garmisch şəhərində keçirdiyi proqram mühəndisliyi konfransı bu sahənin tarixində mühüm mərhələlərdən biri oldu, çünki orada proqramların vaxtında hazırlanması, etibarlılığı, layihələndirilməsi və texniki xidmət kimi problemlər müzakirə edildi. Bu yanaşma proqram mühəndisliyinin əsas məqsədini yaxşı izah edir: işləyən kod yazmaqla yanaşı, etibarlı, başa düşülən, təhlükəsiz və gələcəkdə dəyişdirilməsi mümkün olan proqram sistemləri yaratmaq.
 
-Proqramlaşdırmanın mənə maraqlı gələn tərəflərindən biri də texnologiyanın iqtisadiyyatla əlaqəsidir, çünki proqram təminatı yalnız texniki problemləri həll etmək üçün yaradılmır, eyni zamanda şirkətlərin biznes modellərinə, insanların gündəlik davranışlarına və bütöv bazarların inkişafına təsir göstərir. Kompüter sənayesinin ilk dövrlərində proqramlar çox vaxt avadanlıqla birlikdə təqdim edilirdi, lakin zamanla proqram təminatının ayrıca kommersiya məhsulu kimi satılması, lisenziyalaşdırılması və xidmət şəklində təqdim olunması geniş yayıldı.
+Mənbələr: [Computer History Museum: Babbage Engine](https://www.computerhistory.org/babbage/history) və [NATO konfransının 1968-ci il hesabatı](https://homepages.cs.ncl.ac.uk/brian.randell/NATO/nato1968.PDF).
 
-Bu gün proqram təminatından gəlir əldə etməyin müxtəlif yolları mövcuddur: şirkətlər proqramlarını birbaşa sata, aylıq və illik abunəliklər təklif edə, bulud xidmətləri göstərə və ya reklamla maliyyələşən platformalar yarada bilərlər. Bəzi xidmətlər istifadəçilərə ödənişsiz təqdim edilsə də, onları hazırlayan şirkətlər reklamdan, əlavə xidmətlərdən və ya istifadəçi məlumatlarının kommersiya məqsədilə işlənməsindən gəlir əldə edə bilirlər. Digər tərəfdən, açıq mənbəli proqram təminatı göstərir ki, texnologiyanın inkişafı yalnız proqramların birbaşa satışından asılı deyil, çünki proqramçılar və icmalar kodu paylaşaraq birgə işləyə, şirkətlər isə dəstək və digər xidmətlər vasitəsilə gəlir əldə edə bilərlər.
+## Proqram təminatı və müasir iqtisadiyyat
 
-Kapitalist iqtisadiyyatında texnologiyanın uğuru çox vaxt onun nə qədər faydalı olması ilə yanaşı, nə qədər gəlir gətirməsi, bazarda hansı mövqeyə sahib olması və rəqiblərindən nə ilə fərqlənməsi ilə də ölçülür. Bu yanaşma böyük investisiyaların, yeni məhsulların və geniş istifadəçi kütləsinə çatan xidmətlərin yaranmasına kömək edir, amma bəzi hallarda istifadəçilərin maraqları ilə şirkətlərin kommersiya məqsədləri arasında ziddiyyət də yarada bilər. Məsələn, insanlara məlumat tapmaqda kömək etmək üçün yaradılmış platforma zamanla istifadəçiləri daha uzun müddət özündə saxlamağa üstünlük verə bilər, buna görə də texnologiyaya yalnız funksiyaları baxımından deyil, onun hansı iqtisadi model əsasında işlədiyini nəzərə alaraq yanaşmaq vacibdir.
+Bu gün proqram təminatı yalnız kompüterin işləməsi üçün lazım olan texniki vasitə deyil, həm də şirkətlərin xidmət göstərdiyi, məhsullarını satdığı, iş proseslərini avtomatlaşdırdığı və rəqəmsal bazarlarda rəqabət apardığı əsas vasitələrdən biridir. Bulud xidmətləri, ödənişli proqramlar, onlayn mağazalar, sosial şəbəkələr və rəqəmsal platformalar proqram təminatının iqtisadi dəyər yaratmasının müxtəlif nümunələridir, çünki onların fəaliyyəti istifadəçiləri, məlumatları, infrastruktur və xidmətləri bir araya gətirir.
 
-## Bu gün proqram mühəndisliyində nə dəyişir?
+Kapitalist iqtisadiyyatda proqram təminatı həm məhsul, həm də gəlir əldə etmək üçün istifadə edilən infrastruktur ola bilər, məsələn, bir şirkət proqramı abunəliklə sata, reklam vasitəsilə gəlir əldə edə və ya başqa müəssisələrə bulud xidmətləri göstərə bilər. Bununla yanaşı, rəqəmsal platformaların bazarda böyük güc toplaması, istifadəçi məlumatlarından necə istifadə etməsi və texnologiyanın yaratdığı faydaların kimlər arasında bölüşdürülməsi kimi məsələlər də müzakirə olunur, buna görə proqram mühəndisliyini yalnız texniki baxımdan deyil, iqtisadi və sosial tərəfləri ilə də öyrənmək maraqlıdır.
 
-Hazırda proqram təminatının hazırlanmasına təsir edən əsas dəyişikliklərdən biri süni intellekt alətlərinin gündəlik iş prosesinə daxil olmasıdır. Bu alətlər kod yaratmağa, mövcud kodu izah etməyə, testlər hazırlamağa və proqramlaşdırma zamanı qarşıya çıxan problemləri araşdırmağa kömək edir, lakin onların yaratdığı nəticələr həmişə düzgün olmur və buna görə də proqramçının texniki bilikləri, yoxlama bacarığı və sistemin bütöv quruluşunu anlamaq qabiliyyəti hələ də vacibdir.
+Açıq mənbəli proqramlar bu mənzərənin başqa bir hissəsidir, çünki onlar insanlara kodu araşdırmaq, dəyişdirmək və layihələrin inkişafına töhfə vermək imkanı verir, eyni zamanda açıq mənbəli texnologiyalardan kommersiya məhsulları və xidmətləri yaratmaq da mümkündür. Mənim üçün burada maraqlı olan sual texnologiyanın sadəcə necə işləməsi deyil, həm də hansı problemi həll etməsi, kimə fayda verməsi və istifadə olunduğu iqtisadi sistemə necə təsir göstərməsidir.
 
-Süni intellektin inkişafı proqram mühəndisliyində iş üsullarını dəyişdirir, çünki bəzi tapşırıqları əvvəlkindən daha sürətli yerinə yetirmək mümkün olur və proqramçılar vaxtlarının daha çox hissəsini arxitektura, mürəkkəb problemlərin həlli və yaradılan kodun keyfiyyətinin yoxlanılmasına ayıra bilirlər. Bununla belə, bu dəyişikliklərin bütün şirkətlərə və mütəxəssislərə eyni şəkildə təsir etdiyini demək olmaz, çünki nəticələr istifadə olunan texnologiyalardan, layihənin mürəkkəbliyindən və komandanın iş qaydalarından asılıdır.
+Mənbələr: [Liang və Aroles, _Charting Platform Capitalism_](https://onlinelibrary.wiley.com/doi/10.1111/ntwe.12234) və [Langley və Leyshon, _Platform Capitalism_](https://doi.org/10.2218/finsoc.v3i1.1936).
 
-Mənim üçün burada əsas sual süni intellektin proqramçıları tamamilə əvəz edib etməyəcəyi deyil, proqram təminatı yaratmaq üsulları dəyişdikcə insanın hansı bilik və bacarıqlara daha çox ehtiyac duyacağıdır. Kod yaratmaq asanlaşa bilər, amma düzgün problemi müəyyənləşdirmək, sistemin necə işlədiyini anlamaq, təhlükəsizlik risklərini qiymətləndirmək və hazırlanmış həllin həqiqətən faydalı olduğunu yoxlamaq proqram mühəndisliyinin vacib hissəsi olaraq qalır.
+## Bu bloqda nələr olacaq?
 
-## Bu bloqda nə yazacağam?
+Burada proqramlaşdırma, proqram mühəndisliyi, Linux, terminal alətləri, veb texnologiyaları, açıq mənbəli layihələr, süni intellekt və texnologiyanın iqtisadiyyata təsiri haqqında yazılar paylaşmağı planlaşdırıram, bəzən konkret texniki problemi və onun həllini izah edəcəyəm, bəzən isə texnologiyaların tarixini araşdıraraq onların bugünkü sistemlərə necə təsir etdiyindən danışacağam. Yazılarımın hamısının eyni mövzuda olması vacib deyil, çünki bu bloq həm də maraq dairəmin necə dəyişdiyini, hansı layihələr üzərində işlədiyimi və öyrənmə prosesimdə hansı nəticələrə gəldiyimi göstərəcək.
 
-Bu bloqda proqramlaşdırma, proqram mühəndisliyi, texnologiyanın tarixi, internet və rəqəmsal iqtisadiyyat haqqında yazmağı planlaşdırıram, bəzən konkret texniki mövzunu araşdıracaq, bəzən yeni texnologiyaların cəmiyyətə təsiri barədə fikirlərimi bölüşəcək, bəzən də gündəlik istifadə etdiyimiz proqramların arxasında hansı ideyaların və iqtisadi maraqların dayandığına nəzər salacağam. Mövzuları hazır cavablar kimi təqdim etməkdənsə, etibarlı mənbələrdən öyrənmək, məlumatları müqayisə etmək və nəticələri öz sözlərimlə izah etmək istəyirəm.
+Məqsədim mürəkkəb anlayışları olduğundan çətin göstərmək deyil, əksinə, onları mümkün qədər aydın izah etmək, vacib məlumatların mənbələrini göstərmək və öyrəndiklərimi başqalarının da faydalana biləcəyi şəkildə paylaşmaqdır. Zamanla bu saytın həm şəxsi qeydlərimi topladığım arxivə, həm də texnologiya haqqında daha dərindən düşünmək və yazmaq üçün özümə məxsus bir məkana çevrilməsini istəyirəm.
 
-Öz saytımda yazmağın mənim üçün əsas üstünlüyü odur ki, burada mövzuları maraqlarıma uyğun seçə, dizaynı zamanla dəyişdirə və bütün yazıları bir yerdə toplaya bilərəm, buna görə də bu ilk qeydi tamamlanmış bir layihənin yekunu kimi yox, zamanla inkişaf etdirəcəyim şəxsi məkanın başlanğıcı kimi görürəm.
+## Əlaqədə qalaq
 
-## Mənbələr
+İlk yazımı oxuduğunuz üçün təşəkkür edirəm, əgər proqramlaşdırma, texnologiya və gələcəkdə burada paylaşacağım mövzular sizə də maraqlıdırsa, məni X və LinkedIn platformalarında izləyə, yeni yazılarım və layihələrim haqqında paylaşımlarımdan xəbər tuta bilərsiniz.
 
-- [Computer History Museum: Babbage və Analitik Maşının tarixi](https://www.computerhistory.org/babbage/history/)
-- [Susannah Fullerton: Ada Lovelace və Analitik Maşın](https://susannahfullerton.com.au/ada-lovelace-the-analytical-engine/)
-- [IEEE Spectrum: ENIAC kompüterinin qadın proqramçıları](https://spectrum.ieee.org/untold-history-of-ai-invisible-woman-programmed-americas-first-electronic-computer)
-- [NATO arxivi: 1968-ci il proqram mühəndisliyi konfransı](https://archives.nato.int/conference-sur-la-technique-des-elements-non-materiels-pour-ordinateurs-du-7-au-11-octobre-1968/informationobject/reports)
-- [Computer History Museum: Proqram təminatının kommersiya məhsuluna çevrilməsi](https://www.computerhistory.org/revolution/personal-computers/7/172)
-- [OECD: Rəqəmsal iqtisadiyyat və biznes modelləri](https://www.oecd.org/en/publications/oecd-handbook-on-compiling-digital-supply-and-use-tables_11a0db02-en/full-report/component-7.html)
-- [Stack Overflow Developer Survey](https://survey.stackoverflow.co/2025/ai)
+- [X profilim](https://x.com/bahruzmmad)
+- [LinkedIn profilim](https://www.linkedin.com/in/bahruzmammad)
 
-## Məni izləyə bilərsiniz
+### Mənbələr
 
-Bloqdan kənarda da yazılarımı, fikirlərimi və yeni layihələrimi izləmək istəyirsinizsə, X və LinkedIn hesablarıma baxa bilərsiniz.
-
-- [X: @bahruzmmad](https://x.com/bahruzmmad)
-- [LinkedIn: Bahruz Mammadov](https://www.linkedin.com/in/bahruzmammad/)
+- [Computer History Museum: A Brief History of the Babbage Engine](https://www.computerhistory.org/babbage/history)
+- [Science Museum Group: Ada Lovelace](https://collection.sciencemuseumgroup.org.uk/people/cp38764)
+- [NATO: Software Engineering konfransının hesabatı, 1968](https://homepages.cs.ncl.ac.uk/brian.randell/NATO/nato1968.PDF)
+- [Liang və Aroles: Charting Platform Capitalism](https://onlinelibrary.wiley.com/doi/10.1111/ntwe.12234)
+- [Langley və Leyshon: Platform Capitalism](https://doi.org/10.2218/finsoc.v3i1.1936)
+- [Wikimedia Commons: Analytical Engine-in sınaq modeli və şəkil lisenziyası](https://commons.wikimedia.org/wiki/File:Analytical_engine_trial_model,_Charles_Babbage,_1834-1871_-_Science_Museum,_London_-_DSC05565.jpg)
+- [LinkedIn profilim](https://www.linkedin.com/in/bahruzmammad)
