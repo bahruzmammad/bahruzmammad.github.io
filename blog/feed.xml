@@ -5,10 +5,10 @@
     <link>https://bahruzmammad.github.io/blog/</link>
     <description>Portfolio Blog</description>
     <item>
-        <title>Hello, How Are You? | Bahruz Mammadov&#x27;s Blog</title>
+        <title>Hello, How Are You? My First Blog Post</title>
         <link>https://bahruzmammad.github.io/blog/salam/</link>
         <guid>https://bahruzmammad.github.io/blog/salam/</guid>
-        <description>My first blog post about ideas, technology, society, learning, and writing. Learn why I made this website and what I plan to share.</description>
+        <description>My first blog post: why I built this website, a little about me and my path in web development and Java, and what I plan to write about.</description>
     </item>
 </channel>
 </rss>
