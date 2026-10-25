@@ -2,7 +2,7 @@
 title: "Hello, How Are You? My First Blog Post"
 description: "My first blog post: why I built this website, a little about me and my path in web development and Java, and what I plan to write about."
 date: "2026-10-23"
-slug: "salam"
+slug: "hello"
 tags:
   - personal blog
   - learning

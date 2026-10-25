@@ -5,9 +5,15 @@
     <link>https://bahruzmammad.github.io/blog/</link>
     <description>Portfolio Blog</description>
     <item>
+        <title>Qloballaşma, Modernləşmə və Qərb Təsiri</title>
+        <link>https://bahruzmammad.github.io/blog/qloballasma/</link>
+        <guid>https://bahruzmammad.github.io/blog/qloballasma/</guid>
+        <description>Qloballaşma və modernləşmə dünyaya inteqrasiya və müasirləşmə prosesləridir; bir-birinə yaxın olsalar da, fərqli məfhumlardır.</description>
+    </item>
+    <item>
         <title>Hello, How Are You? My First Blog Post</title>
-        <link>https://bahruzmammad.github.io/blog/salam/</link>
-        <guid>https://bahruzmammad.github.io/blog/salam/</guid>
+        <link>https://bahruzmammad.github.io/blog/hello/</link>
+        <guid>https://bahruzmammad.github.io/blog/hello/</guid>
         <description>My first blog post: why I built this website, a little about me and my path in web development and Java, and what I plan to write about.</description>
     </item>
 </channel>
