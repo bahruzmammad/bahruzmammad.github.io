@@ -102,6 +102,14 @@
             })();
         </script>
         <link rel="stylesheet" href="assets/css/styles.css" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+        />
     </head>
     <body>
         <!--<a href="#main" class="skip-to-content"> Skip to main content </a>-->
@@ -129,12 +137,9 @@
                         <li><a href="#home" class="active"> Home </a></li>
                         <li><a href="#about"> About </a></li>
                         <li><a href="#projects"> Projects </a></li>
-                        <!--<li>                            <a href="#education">                                Education                            </a>                        </li>-->
+                        <li><a href="#education"> Education </a></li>
                         <li><a href="#skills"> Skills </a></li>
-                        <!--            <li>-->
-                        <!--              <a href="blog/" class="nav-blog"> Blog </a>-->
-                        <!--            </li>-->
-                        <!--<li>                            <a href="#certificates">                                Certificates                            </a>                        </li>-->
+                        <li><a href="#certificates"> Certificates </a></li>
                         <li><a href="#contact"> Contact </a></li>
                     </ul>
                     <div class="theme-switcher">
@@ -280,6 +285,8 @@
                     </div>
                 </div>
             </section>
+
+            <!-- PROJECTS: filled by script.js from GitHub API / repos.json -->
             <section
                 id="projects"
                 class="projects section"
@@ -312,7 +319,28 @@
                     </div>
                 </div>
             </section>
-            <!--<section                id="education"                class="education section"                aria-labelledby="education-title"            >                <div class="container">                    <div class="section-header reveal">                        <span class="section-label">                            Education                        </span>                        <h2 id="education-title">                            Academic Background                        </h2>                    </div>                    <div                        class="education-grid"                        id="education-grid"                        aria-live="polite"                    ></div>                </div>            </section>-->
+
+            <!-- EDUCATION: cards are rendered by renderEducation() in script.js
+                 (edit the EDUCATION_ITEMS array there) -->
+            <section
+                id="education"
+                class="education section"
+                aria-labelledby="education-title"
+            >
+                <div class="container">
+                    <div class="section-header reveal">
+                        <span class="section-label"> Education </span>
+                        <h2 id="education-title">Academic Background</h2>
+                    </div>
+                    <div
+                        class="education-grid"
+                        id="education-grid"
+                        aria-live="polite"
+                    ></div>
+                </div>
+            </section>
+
+            <!-- SKILLS: static list, visibility controlled in script.js -->
             <section
                 id="skills"
                 class="skills section"
@@ -380,7 +408,100 @@
                     </div>
                 </div>
             </section>
-            <!--<section                id="certificates"                class="certificates section"                aria-labelledby="certificates-title"            >                <div class="container">                    <div class="section-header reveal">                        <span class="section-label">                            Certificates                        </span>                        <h2 id="certificates-title">                            Certifications                        </h2>                    </div>                    <div                        class="cert-showcase reveal"                        id="cert-showcase"                        aria-label="Certificate showcase"                    >                        <div class="cert-main">                            <div class="cert-image-wrap">                                <img                                    id="cert-img"                                    src=""                                    alt=""                                    loading="lazy"                                />                            </div>                            <div class="cert-info">                                <div class="cert-meta">                                    <span                                        id="cert-issuer"                                        class="cert-issuer"                                    ></span>                                    <span                                        id="cert-date"                                        class="cert-date"                                    ></span>                                </div>                                <h3                                    id="cert-title"                                    class="cert-title"                                ></h3>                                <p                                    id="cert-desc"                                    class="cert-desc"                                ></p>                                <div class="cert-actions">                                    <a                                        id="cert-view"                                        href="#"                                        class="button button-primary"                                        target="_blank"                                        rel="noopener noreferrer"                                        aria-label="View certificate"                                    >                                        View Certificate                                    </a>                                    <a                                        id="cert-download"                                        href="#"                                        class="button button-secondary"                                        download                                        aria-label="Download certificate"                                    >                                        Download                                    </a>                                </div>                            </div>                        </div>                        <div                            class="cert-controls"                            id="cert-controls"                        >                            <button                                type="button"                                class="cert-btn"                                id="cert-prev"                                aria-label="Previous certificate"                            >                                &#8592;                            </button>                            <span                                class="cert-indicator"                                id="cert-indicator"                                aria-live="polite"                                aria-atomic="true"                            >                                1 / 1                            </span>                            <button                                type="button"                                class="cert-btn"                                id="cert-next"                                aria-label="Next certificate"                            >                                &#8594;                            </button>                        </div>                    </div>                </div>            </section>-->
+
+            <!-- CERTIFICATES: content comes from CERTIFICATE_ITEMS in script.js.
+                 This markup is only the empty template that script.js fills in. -->
+            <section
+                id="certificates"
+                class="certificates section"
+                aria-labelledby="certificates-title"
+            >
+                <div class="container">
+                    <div class="section-header reveal">
+                        <span class="section-label"> Certificates </span>
+                        <h2 id="certificates-title">Certifications</h2>
+                    </div>
+                    <div
+                        class="cert-showcase reveal"
+                        id="cert-showcase"
+                        aria-label="Certificate showcase"
+                    >
+                        <div class="cert-main">
+                            <div class="cert-image-wrap">
+                                <img id="cert-img" alt="" loading="lazy" />
+                            </div>
+                            <div class="cert-info">
+                                <div class="cert-meta">
+                                    <span
+                                        id="cert-issuer"
+                                        class="cert-issuer"
+                                    ></span>
+                                    <span
+                                        id="cert-date"
+                                        class="cert-date"
+                                    ></span>
+                                </div>
+                                <h3 id="cert-title" class="cert-title"></h3>
+                                <p id="cert-desc" class="cert-desc"></p>
+                                <p id="cert-id" class="cert-id"></p>
+                                <ul
+                                    id="cert-skills"
+                                    class="cert-skills"
+                                    aria-label="Skills covered"
+                                ></ul>
+                                <div class="cert-actions">
+                                    <a
+                                        id="cert-view"
+                                        href="#"
+                                        class="button button-primary"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label="View certificate"
+                                    >
+                                        Show credential
+                                    </a>
+                                    <a
+                                        id="cert-download"
+                                        href="#"
+                                        class="button button-secondary"
+                                        download
+                                        aria-label="Download certificate"
+                                    >
+                                        Download
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cert-controls" id="cert-controls">
+                            <button
+                                type="button"
+                                class="cert-btn"
+                                id="cert-prev"
+                                aria-label="Previous certificate"
+                            >
+                                &#8592;
+                            </button>
+                            <span
+                                class="cert-indicator"
+                                id="cert-indicator"
+                                aria-live="polite"
+                                aria-atomic="true"
+                            >
+                                1 / 1
+                            </span>
+                            <button
+                                type="button"
+                                class="cert-btn"
+                                id="cert-next"
+                                aria-label="Next certificate"
+                            >
+                                &#8594;
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <section
                 id="contact"
                 class="contact section"

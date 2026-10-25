@@ -73,9 +73,14 @@ html:focus-within {
 
 body {
     min-width: 320px;
+    /*font-family:
+        -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue",
+        Arial, sans-serif;*/
+
     font-family:
         -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue",
-        Arial, sans-serif;
+        "Segoe UI", Ubuntu, "Liberation Sans", Arial, sans-serif;
+
     color: var(--text-primary);
     background: var(--background);
     line-height: 1.5;
@@ -1965,4 +1970,49 @@ html[data-theme="dark"] .contact-button:hover:not(:disabled) {
         width: 30px;
         height: 30px;
     }
+}
+/* CERTIFICATES: extra fields (credential id, skills) */
+
+.cert-id {
+    margin-bottom: 12px;
+    font-size: 11px;
+    letter-spacing: 0.02em;
+    color: var(--text-tertiary);
+    overflow-wrap: anywhere;
+    transition: color 0.4s var(--ease-apple);
+}
+.cert-id:empty {
+    display: none;
+}
+
+.cert-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 18px;
+}
+.cert-skills:empty {
+    display: none;
+}
+.cert-skills li {
+    padding: 3px 8px;
+    font-size: 11px;
+    color: var(--text-tertiary);
+    background: var(--background-light);
+    border-radius: 999px;
+    white-space: nowrap;
+    transition:
+        background-color 0.25s var(--ease-apple),
+        color 0.25s var(--ease-apple);
+}
+.cert-showcase:hover .cert-skills li {
+    color: var(--text-secondary);
+}
+
+/* When the certificate image is missing, script.js adds this class */
+.cert-main.no-image {
+    grid-template-columns: 1fr;
+}
+.cert-main.no-image .cert-image-wrap {
+    display: none;
 }

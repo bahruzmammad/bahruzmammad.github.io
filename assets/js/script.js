@@ -40,9 +40,13 @@ $(function () {
   const CARD_STAGGER_MS = 60;
   const DEMO_IMG_BASE = "assets/img/demo/";
 
+  /* ------------------------------------------------------------------ */
+  /* EDUCATION DATA                                                      */
+  /* Add a new school by copying one { ... }, block and editing it.      */
+  /* ------------------------------------------------------------------ */
   const EDUCATION_ITEMS = [
     {
-      image: "",
+      image: "assets/img/kollec-idhtk.jpg",
       name: "Ismayilli State College of Technology and Humanities",
       program: "Computer Software Systems",
       period: "2024 \u2013 Present",
@@ -170,17 +174,54 @@ $(function () {
     "Full-Stack Development": true,
   };
 
+  /* ------------------------------------------------------------------ */
+  /* CERTIFICATE DATA                                                    */
+  /*                                                                     */
+  /* HOW TO ADD A NEW CERTIFICATE:                                       */
+  /*   1. Copy the whole { ... }, block of the first item.               */
+  /*   2. Paste it right after it (keep the comma between blocks).       */
+  /*   3. Change the fields. Leave a field as "" (or [] for skills)      */
+  /*      if you do not have it, the card hides that part.               */
+  /*   4. Put the image into assets/img/ and set the "image" path.       */
+  /*                                                                     */
+  /* Fields:                                                             */
+  /*   image       local image path (do NOT use a LinkedIn image URL,    */
+  /*               those links are signed and expire)                    */
+  /*   title       certificate name                                      */
+  /*   issuer      who issued it                                         */
+  /*   date        text shown next to the issuer                         */
+  /*   description short summary                                         */
+  /*   credentialId  shown as "Credential ID ..."                        */
+  /*   skills      array of short tags                                   */
+  /*   link        verification URL, shows the "Show credential" button  */
+  /*   download    file path for the Download button ("" hides it)       */
+  /* ------------------------------------------------------------------ */
   const CERTIFICATE_ITEMS = [
     {
       image: "assets/img/certificate-1.jpg",
       title: "Web Development Fundamentals",
       issuer: "IBM SkillsBuild",
-      date: "2026",
+      date: "Issued Sep 2026",
       description:
-        "Web development fundamentals and related learning activities.",
-      link: "",
+        "Completed the Web Development Fundamentals credential issued by IBM SkillsBuild, covering fundamental concepts and practices in web development.",
+      credentialId: "2def4899-7299-4ce2-84b5-57b999cebd29",
+      skills: ["Web Design", "Software Development Life Cycle (SDLC)"],
+      link: "https://www.credly.com/badges/2def4899-7299-4ce2-84b5-57b999cebd29/linked_in_profile",
       download: "assets/img/certificate-1.jpg",
     },
+
+    // ---- TEMPLATE FOR THE SECOND CERTIFICATE (remove the // to use) ----
+    // {
+    //   image: "assets/img/certificate-2.jpg",
+    //   title: "Certificate name",
+    //   issuer: "Issuer name",
+    //   date: "Issued Month YYYY",
+    //   description: "Short description of what the certificate covers.",
+    //   credentialId: "",
+    //   skills: [],
+    //   link: "",
+    //   download: "assets/img/certificate-2.jpg",
+    // },
   ];
 
   let ticking = false;
@@ -920,16 +961,32 @@ $(function () {
     }, CERT_AUTOPLAY_MS);
   }
 
+  // Fills the single certificate card with the item at `index`.
   function renderCert(index) {
     if (!CERTIFICATE_ITEMS.length) return;
     const cert = CERTIFICATE_ITEMS[index];
     if (!cert) return;
     certIndex = index;
 
+    // Image: if there is no image or it fails to load, hide the image column
     const $img = $("#cert-img");
-    $img
-      .attr("src", cert.image || "")
-      .attr("alt", cert.title ? "Certificate: " + cert.title : "Certificate");
+    const $main = $(".cert-main");
+    $img.off("error.cert load.cert");
+    if (cert.image && cert.image.trim()) {
+      $main.removeClass("no-image");
+      $img
+        .on("error.cert", function () {
+          $main.addClass("no-image");
+        })
+        .on("load.cert", function () {
+          $main.removeClass("no-image");
+        })
+        .attr("src", cert.image)
+        .attr("alt", cert.title ? "Certificate: " + cert.title : "Certificate");
+    } else {
+      $img.removeAttr("src").attr("alt", "");
+      $main.addClass("no-image");
+    }
 
     $("#cert-title").text(cert.title || "");
     $("#cert-issuer").text(cert.issuer || "");
@@ -937,16 +994,31 @@ $(function () {
     $("#cert-desc").text(cert.description || "");
     $("#cert-indicator").text(index + 1 + " / " + CERTIFICATE_ITEMS.length);
 
+    // Credential ID (hidden by CSS when empty)
+    $("#cert-id").text(
+      cert.credentialId ? "Credential ID " + cert.credentialId : "",
+    );
+
+    // Skills chips (hidden by CSS when empty)
+    const $skills = $("#cert-skills").empty();
+    if (Array.isArray(cert.skills)) {
+      cert.skills.forEach(function (skill) {
+        $("<li>").text(skill).appendTo($skills);
+      });
+    }
+
+    // "Show credential" button
     const $view = $("#cert-view");
     if (cert.link && cert.link.trim()) {
       $view
         .attr("href", cert.link)
-        .attr("aria-label", "View certificate: " + (cert.title || ""))
+        .attr("aria-label", "Show credential: " + (cert.title || ""))
         .show();
     } else {
       $view.hide();
     }
 
+    // "Download" button
     const $download = $("#cert-download");
     if (cert.download && cert.download.trim()) {
       $download
@@ -971,6 +1043,7 @@ $(function () {
 
     renderCert(0);
 
+    // With one certificate the arrows and counter are not needed
     if (CERTIFICATE_ITEMS.length <= 1) {
       $("#cert-controls").hide();
     } else {
@@ -997,6 +1070,7 @@ $(function () {
       }, 3000);
     });
 
+    // Pause autoplay while the user hovers or focuses the card
     $showcase.on("mouseenter focusin", function () {
       certPaused = true;
     });
