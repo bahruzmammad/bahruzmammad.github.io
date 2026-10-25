@@ -1,0 +1,58 @@
+name: Update repos.json
+
+on:
+  schedule:
+    - cron: "0 3 * * *" # hər gün 03:00 UTC
+  workflow_dispatch: # əl ilə işə salmaq üçün (Actions tabında "Run workflow")
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-repos-json
+  cancel-in-progress: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Fetch public repositories
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          mkdir -p assets/data
+
+          gh api "users/bahruzmammad/repos?per_page=100&sort=updated&direction=desc" \
+            --paginate --slurp \
+            | jq '[.[][]
+                | select(.private == false)
+                | {name, description, language, stargazers_count, forks_count, homepage, html_url, visibility, private}]' \
+            > repos.tmp.json
+
+          # API xətası və ya boş cavab olarsa mövcud faylı pozma
+          COUNT=$(jq 'length' repos.tmp.json)
+          if [ "$COUNT" -lt 1 ]; then
+            echo "Empty result, keeping the existing repos.json"
+            exit 1
+          fi
+
+          mv repos.tmp.json assets/data/repos.json
+          echo "Fetched $COUNT repositories"
+
+      - name: Commit and push if changed
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- assets/data/repos.json; then
+            echo "No changes in repos.json"
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/data/repos.json
+          git commit -m "chore: update repos.json"
+          git push

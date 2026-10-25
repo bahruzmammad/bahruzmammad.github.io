@@ -31,6 +31,10 @@ $(function () {
   const GITHUB_API_URL = `https://api.github.com/users/${GITHUB_USERNAME}/repos`;
   const GITHUB_PER_PAGE = 100;
   const GITHUB_TIMEOUT = 8000;
+  const GITHUB_MAX_PAGES = 5;
+  const GITHUB_CACHE_KEY = "github_repos_cache_v1";
+  const GITHUB_CACHE_TTL = 10 * 60 * 1000;
+  const GITHUB_FALLBACK_URL = "assets/data/repos.json";
   const THEME_KEY = "theme";
   const CERT_AUTOPLAY_MS = 5500;
   const CARD_STAGGER_MS = 60;
@@ -185,6 +189,8 @@ $(function () {
   let certIndex = 0;
   let certTimer = null;
   let certPaused = false;
+  let githubRequestId = 0;
+  let githubInFlight = null;
 
   function isDesktop() {
     return window.innerWidth > DESKTOP_BREAKPOINT;
@@ -231,6 +237,7 @@ $(function () {
       ? PROJECT_OVERRIDES[repoName]
       : null;
   }
+
   function isProjectVisible(repo) {
     if (!repo || !repo.name) return false;
 
@@ -353,6 +360,10 @@ $(function () {
     applyTheme(next);
   }
 
+  /* ------------------------------------------------------------------ */
+  /* GITHUB PROJECTS: cache, API, local fallback, error handling         */
+  /* ------------------------------------------------------------------ */
+
   function renderGitHubLoading() {
     $projectsGrid.html(
       `<article class="project-card github-loading">
@@ -366,8 +377,134 @@ $(function () {
     );
   }
 
+  function pickRepoFields(repo) {
+    return {
+      name: repo.name,
+      description: repo.description,
+      language: repo.language,
+      stargazers_count: repo.stargazers_count,
+      forks_count: repo.forks_count,
+      homepage: repo.homepage,
+      html_url: repo.html_url,
+      visibility: repo.visibility,
+      private: repo.private,
+    };
+  }
+
+  function isPublicRepo(repo) {
+    return !!(
+      repo &&
+      repo.name &&
+      repo.private !== true &&
+      (!repo.visibility || repo.visibility === "public")
+    );
+  }
+
+  function readRepoCache(allowStale) {
+    try {
+      const raw = localStorage.getItem(GITHUB_CACHE_KEY);
+      if (!raw) return null;
+      const data = JSON.parse(raw);
+      if (!data || !Array.isArray(data.repos) || !data.repos.length) {
+        return null;
+      }
+      const fresh = Date.now() - Number(data.savedAt) < GITHUB_CACHE_TTL;
+      return fresh || allowStale ? data : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function writeRepoCache(repos) {
+    try {
+      localStorage.setItem(
+        GITHUB_CACHE_KEY,
+        JSON.stringify({ savedAt: Date.now(), repos: repos }),
+      );
+    } catch (e) {}
+  }
+
+  function parseGitHubError(xhr, textStatus) {
+    const info = {
+      kind: "unknown",
+      status: xhr ? xhr.status : 0,
+      message: "",
+      resetAt: null,
+    };
+
+    if (textStatus === "timeout") {
+      info.kind = "timeout";
+      return info;
+    }
+
+    if (!xhr || xhr.status === 0) {
+      info.kind = "network";
+      return info;
+    }
+
+    const remaining = xhr.getResponseHeader("x-ratelimit-remaining");
+    const reset = xhr.getResponseHeader("x-ratelimit-reset");
+    const retryAfter = xhr.getResponseHeader("retry-after");
+    const apiMessage =
+      xhr.responseJSON && xhr.responseJSON.message
+        ? String(xhr.responseJSON.message)
+        : "";
+
+    info.message = apiMessage;
+
+    if (retryAfter && !isNaN(parseInt(retryAfter, 10))) {
+      info.resetAt = new Date(Date.now() + parseInt(retryAfter, 10) * 1000);
+    } else if (reset && !isNaN(parseInt(reset, 10))) {
+      info.resetAt = new Date(parseInt(reset, 10) * 1000);
+    }
+
+    if (
+      (xhr.status === 403 || xhr.status === 429) &&
+      (remaining === "0" || retryAfter || /rate limit/i.test(apiMessage))
+    ) {
+      info.kind = "rate-limit";
+    } else if (xhr.status === 401) {
+      info.kind = "auth";
+    } else if (xhr.status === 403) {
+      info.kind = "forbidden";
+    } else if (xhr.status === 404) {
+      info.kind = "not-found";
+    } else if (xhr.status >= 500) {
+      info.kind = "server";
+    }
+
+    return info;
+  }
+
+  function getGitHubErrorMessage(err) {
+    if (!err) return "Could not load GitHub repositories right now.";
+
+    switch (err.kind) {
+      case "rate-limit":
+        return err.resetAt
+          ? "GitHub API limit reached. Try again after " +
+              err.resetAt.toLocaleTimeString() +
+              "."
+          : "GitHub API limit reached. Please try again later.";
+      case "timeout":
+        return "GitHub did not respond in time. Please try again.";
+      case "network":
+        return "Network error while contacting GitHub.";
+      case "server":
+        return "GitHub is temporarily unavailable.";
+      default:
+        return "Could not load GitHub repositories right now.";
+    }
+  }
+
   function fetchGitHubPage(page, collected) {
-    return $.ajax({
+    if (page > GITHUB_MAX_PAGES) {
+      return $.Deferred().resolve(collected).promise();
+    }
+
+    const deferred = $.Deferred();
+
+    $.ajax({
       url: GITHUB_API_URL,
       method: "GET",
       dataType: "json",
@@ -379,39 +516,146 @@ $(function () {
         sort: "updated",
         direction: "desc",
       },
-    }).then(function (repos) {
-      if (!Array.isArray(repos)) throw new Error("Invalid response.");
-      const all = collected.concat(repos);
-      return repos.length < GITHUB_PER_PAGE
-        ? all
-        : fetchGitHubPage(page + 1, all);
-    });
+    })
+      .done(function (repos) {
+        if (!Array.isArray(repos)) {
+          deferred.reject({
+            kind: "unknown",
+            status: 200,
+            message: "Invalid response.",
+            resetAt: null,
+          });
+          return;
+        }
+
+        const all = collected.concat(repos);
+
+        if (repos.length < GITHUB_PER_PAGE) {
+          deferred.resolve(all);
+        } else {
+          fetchGitHubPage(page + 1, all).then(
+            deferred.resolve,
+            deferred.reject,
+          );
+        }
+      })
+      .fail(function (xhr, textStatus) {
+        deferred.reject(parseGitHubError(xhr, textStatus));
+      });
+
+    return deferred.promise();
+  }
+
+  function fetchLocalRepos() {
+    const deferred = $.Deferred();
+
+    $.ajax({
+      url: GITHUB_FALLBACK_URL,
+      method: "GET",
+      dataType: "json",
+      timeout: GITHUB_TIMEOUT,
+    })
+      .done(function (data) {
+        if (Array.isArray(data) && data.length) {
+          deferred.resolve(data);
+        } else {
+          deferred.reject({
+            kind: "unknown",
+            status: 200,
+            message: "Fallback file is empty or invalid.",
+            resetAt: null,
+          });
+        }
+      })
+      .fail(function (xhr, textStatus) {
+        deferred.reject({
+          kind: "unknown",
+          status: xhr ? xhr.status : 0,
+          message: "Fallback file unavailable (" + textStatus + ").",
+          resetAt: null,
+        });
+      });
+
+    return deferred.promise();
+  }
+
+  function loadRepos() {
+    const fresh = readRepoCache(false);
+
+    if (fresh) {
+      return $.Deferred()
+        .resolve({ repos: fresh.repos, source: "cache" })
+        .promise();
+    }
+
+    return fetchGitHubPage(1, []).then(
+      function (repos) {
+        const slim = repos.map(pickRepoFields);
+        writeRepoCache(slim);
+        return { repos: slim, source: "api" };
+      },
+      function (apiError) {
+        console.warn(
+          "[GitHub API]",
+          apiError.kind,
+          apiError.status || "",
+          apiError.message || "",
+          apiError.resetAt ? "reset: " + apiError.resetAt.toISOString() : "",
+        );
+
+        const stale = readRepoCache(true);
+        if (stale) {
+          return { repos: stale.repos, source: "stale-cache" };
+        }
+
+        return fetchLocalRepos().then(
+          function (data) {
+            return { repos: data.map(pickRepoFields), source: "local-json" };
+          },
+          function (fallbackError) {
+            console.warn(
+              "[GitHub fallback]",
+              fallbackError.message || "failed",
+            );
+            return $.Deferred().reject(apiError).promise();
+          },
+        );
+      },
+    );
   }
 
   function getGitHubRepos() {
     if (!$projectsGrid.length) return;
+    if (githubInFlight) return;
+
+    const requestId = ++githubRequestId;
+
     $projectsGrid.attr("aria-busy", "true");
     renderGitHubLoading();
-    fetchGitHubPage(1, [])
-      .done(function (repos) {
-        if (!Array.isArray(repos) || !repos.length) {
-          renderGitHubError();
+
+    githubInFlight = loadRepos()
+      .done(function (result) {
+        if (requestId !== githubRequestId) return;
+
+        const publicRepos = (result.repos || []).filter(isPublicRepo);
+
+        if (!publicRepos.length) {
+          renderGitHubError({ kind: "unknown" });
           return;
         }
-        renderGitHubProjects(
-          repos.filter(function (r) {
-            return r && r.visibility === "public" && !r.private;
-          }),
-        );
+
+        renderGitHubProjects(publicRepos);
       })
-      .fail(renderGitHubError);
+      .fail(function (err) {
+        if (requestId !== githubRequestId) return;
+        renderGitHubError(err);
+      })
+      .always(function () {
+        if (requestId !== githubRequestId) return;
+        githubInFlight = null;
+        $projectsGrid.attr("aria-busy", "false");
+      });
   }
-
-  // function isProjectVisible(repo) {
-  //   if (!repo || !repo.name) return false;
-
-  //   return repo.name.toLowerCase() !== "nvim";
-  // }
 
   function renderGitHubProjects(repos) {
     if (!$projectsGrid.length) return;
@@ -536,14 +780,14 @@ $(function () {
     });
   }
 
-  function renderGitHubError() {
+  function renderGitHubError(err) {
     if (!$projectsGrid.length) return;
     $projectsGrid.html(
       `<article class="project-card reveal visible">
                 <div class="project-content">
                     <span class="project-number">\u2014</span>
                     <h3>Projects unavailable</h3>
-                    <p>Could not load GitHub repositories right now.</p>
+                    <p>${escapeHtml(getGitHubErrorMessage(err))}</p>
                     <div class="project-links">
                         <a class="project-link project-link-github" href="${escapeHtml(GITHUB_PROFILE_URL)}" target="_blank" rel="noopener noreferrer">GitHub &rarr;</a>
                     </div>
@@ -552,6 +796,10 @@ $(function () {
     );
     $projectsGrid.attr("aria-busy", "false");
   }
+
+  /* ------------------------------------------------------------------ */
+  /* EDUCATION                                                           */
+  /* ------------------------------------------------------------------ */
 
   function renderEducation() {
     const $grid = $("#education-grid");
@@ -609,6 +857,10 @@ $(function () {
     window.requestAnimationFrame(setupRevealObserver);
   }
 
+  /* ------------------------------------------------------------------ */
+  /* SKILLS                                                              */
+  /* ------------------------------------------------------------------ */
+
   function applySkillVisibility() {
     $(".skill-group").each(function () {
       const $group = $(this);
@@ -643,6 +895,10 @@ $(function () {
       if (visibleCount === 0) $group.hide();
     });
   }
+
+  /* ------------------------------------------------------------------ */
+  /* CERTIFICATES                                                        */
+  /* ------------------------------------------------------------------ */
 
   function stopCertTimer() {
     if (certTimer !== null) {
@@ -754,6 +1010,10 @@ $(function () {
     });
   }
 
+  /* ------------------------------------------------------------------ */
+  /* ABOUT SCROLL                                                        */
+  /* ------------------------------------------------------------------ */
+
   function updateAboutHeight() {
     if (!$about.length || !isDesktop()) {
       $about.css("height", "auto");
@@ -833,6 +1093,10 @@ $(function () {
       $navLinks.filter(`[href="#${currentId}"]`).addClass("active");
   }
 
+  /* ------------------------------------------------------------------ */
+  /* REVEAL + HOVER                                                      */
+  /* ------------------------------------------------------------------ */
+
   function setupRevealObserver() {
     if (revealObserver) {
       revealObserver.disconnect();
@@ -889,6 +1153,10 @@ $(function () {
       $(this).find(".project-tech span").css("transition-delay", "0ms");
     });
   }
+
+  /* ------------------------------------------------------------------ */
+  /* CONTACT FORM                                                        */
+  /* ------------------------------------------------------------------ */
 
   function setContactState(state, message, buttonText) {
     const isDisabled = state === "sending";
@@ -990,6 +1258,10 @@ $(function () {
     });
   }
 
+  /* ------------------------------------------------------------------ */
+  /* MOBILE NAVIGATION                                                   */
+  /* ------------------------------------------------------------------ */
+
   function setupMobileNavigation() {
     if (!$menuToggle.length || !$mainMenu.length) return;
 
@@ -1078,6 +1350,10 @@ $(function () {
     setMenuState($mainMenu.hasClass("is-open"), false);
   }
 
+  /* ------------------------------------------------------------------ */
+  /* SCROLL / RESIZE / THEME EVENTS                                      */
+  /* ------------------------------------------------------------------ */
+
   function handleScroll() {
     if (ticking) return;
     ticking = true;
@@ -1130,6 +1406,10 @@ $(function () {
       updateActiveNav();
     }, 150);
   });
+
+  /* ------------------------------------------------------------------ */
+  /* INIT                                                                */
+  /* ------------------------------------------------------------------ */
 
   function initialize() {
     initializeTheme();

@@ -1,29 +1,57 @@
-name: CI/CD Build and Deploy
+name: Update repos.json
 
 on:
-  push:
-    branches: ["main"]
+  schedule:
+    - cron: "0 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-repos-json
+  cancel-in-progress: true
 
 jobs:
-  build:
+  update:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Deponu yüklə (Checkout)
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Python mühitini quraşdır
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-
-      - name: Build skriptini icra et
+      - name: Fetch public repositories
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          if [ -f blog/build.py ]; then
-            python blog/build.py
-          else
-            echo "Build skripti tapılmadı."
+          set -euo pipefail
+          mkdir -p assets/data
+
+          gh api "users/bahruzmammad/repos?per_page=100&sort=updated&direction=desc" \
+            --paginate --slurp \
+            | jq '[.[][]
+                | select(.private == false)
+                | {name, description, language, stargazers_count, forks_count, homepage, html_url, visibility, private}]' \
+            > repos.tmp.json
+
+          COUNT=$(jq 'length' repos.tmp.json)
+          if [ "$COUNT" -lt 1 ]; then
+            echo "Empty result, keeping the existing repos.json"
+            exit 1
           fi
 
-      - name: Statusu yoxla
-        run: echo "Build prosesi uğurla tamamlandı."
+          mv repos.tmp.json assets/data/repos.json
+          echo "Fetched $COUNT repositories"
+
+      - name: Commit and push if changed
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- assets/data/repos.json; then
+            echo "No changes in repos.json"
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/data/repos.json
+          git commit -m "chore: update repos.json"
+          git push
