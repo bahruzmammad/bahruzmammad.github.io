@@ -57,7 +57,7 @@ $(function () {
       tech: [],
     },
     {
-      image: "",
+      image: "assets/img/divfasad1.png",
       name: "Div Academy",
       program: "Web Development",
       period: "2023 \u2013 2024",
