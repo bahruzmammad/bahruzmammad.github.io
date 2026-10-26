@@ -26,10 +26,12 @@ function response(body: unknown, status = 200): Response {
 describe("application routes and interactions", () => {
   let roots: { root: Root; container: HTMLDivElement }[];
   let matchMediaDescriptor: PropertyDescriptor | undefined;
+  let innerWidthDescriptor: PropertyDescriptor | undefined;
 
   beforeEach(() => {
     roots = [];
     matchMediaDescriptor = Object.getOwnPropertyDescriptor(window, "matchMedia");
+    innerWidthDescriptor = Object.getOwnPropertyDescriptor(window, "innerWidth");
     localStorage.clear();
     localStorage.setItem("theme", "light");
     window.history.replaceState(null, "", "/");
@@ -54,6 +56,9 @@ describe("application routes and interactions", () => {
       Object.defineProperty(window, "matchMedia", matchMediaDescriptor);
     } else {
       Reflect.deleteProperty(window, "matchMedia");
+    }
+    if (innerWidthDescriptor) {
+      Object.defineProperty(window, "innerWidth", innerWidthDescriptor);
     }
     localStorage.clear();
   });
@@ -97,6 +102,24 @@ describe("application routes and interactions", () => {
     );
     expect(container.querySelector('nav[aria-label="Main navigation"]')).not.toBeNull();
     expect(fetchMock).toHaveBeenCalledTimes(1);
+  });
+
+  it("opens and closes the responsive navigation menu", () => {
+    Object.defineProperty(window, "innerWidth", {
+      configurable: true,
+      value: 390,
+    });
+    const container = renderAt("/");
+    const toggle = container.querySelector<HTMLButtonElement>("#menu-toggle")!;
+    const menu = container.querySelector<HTMLUListElement>("#main-menu")!;
+
+    act(() => toggle.click());
+    expect(toggle.getAttribute("aria-expanded")).toBe("true");
+    expect(menu.classList.contains("is-open")).toBe(true);
+
+    act(() => toggle.click());
+    expect(toggle.getAttribute("aria-expanded")).toBe("false");
+    expect(menu.classList.contains("is-open")).toBe(false);
   });
 
   it("renders the blog index, an existing post, and the not-found route", async () => {

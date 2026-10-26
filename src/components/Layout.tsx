@@ -146,7 +146,7 @@ export function Header({
               <span />
             </button>
             <ul
-              className="nav-list"
+              className={`nav-list${menuOpen ? " is-open" : ""}`}
               id="main-menu"
               role="list"
               onClick={(event) => {
