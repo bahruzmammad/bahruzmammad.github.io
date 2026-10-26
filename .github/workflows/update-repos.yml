@@ -24,7 +24,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
-          mkdir -p assets/data
+          mkdir -p public/assets/data
 
           gh api "users/bahruzmammad/repos?per_page=100&sort=updated&direction=desc" \
             --paginate --slurp \
@@ -40,19 +40,19 @@ jobs:
             exit 1
           fi
 
-          mv repos.tmp.json assets/data/repos.json
+          mv repos.tmp.json public/assets/data/repos.json
           echo "Fetched $COUNT repositories"
 
       - name: Commit and push if changed
         run: |
           set -euo pipefail
-          if git diff --quiet -- assets/data/repos.json; then
+          if git diff --quiet -- public/assets/data/repos.json; then
             echo "No changes in repos.json"
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/data/repos.json
+          git add public/assets/data/repos.json
           git commit -m "chore: update repos.json"
           git push

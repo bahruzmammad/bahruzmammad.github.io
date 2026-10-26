@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Bahruz Mammadov Blog</title>
+    <link>https://bahruzmammad.github.io/blog/</link>
+    <description>Notes on software engineering, backend development, and programming.</description>
+  <item>
+    <title>Qloballaşma, Modernləşmə və Qərb Təsiri</title>
+    <link>https://bahruzmammad.github.io/blog/qloballasma/</link>
+    <guid>https://bahruzmammad.github.io/blog/qloballasma/</guid>
+    <description>Qloballaşma və modernləşmə dünyaya inteqrasiya və müasirləşmə prosesləridir; bir-birinə yaxın olsalar da, fərqli məfhumlardır.</description>
+    <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
+  </item>
+  <item>
+    <title>Hello, How Are You? My First Blog Post</title>
+    <link>https://bahruzmammad.github.io/blog/hello/</link>
+    <guid>https://bahruzmammad.github.io/blog/hello/</guid>
+    <description>My first blog post: why I built this website, a little about me and my path in web development and Java, and what I plan to write about.</description>
+    <pubDate>Fri, 23 Oct 2026 12:00:00 GMT</pubDate>
+  </item>
+  </channel>
+</rss>

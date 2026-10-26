@@ -1,29 +1,53 @@
-name: CI/CD Build and Deploy
+name: Build and deploy
 
 on:
   push:
     branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Deponu yüklə (Checkout)
+      - name: Check out repository
         uses: actions/checkout@v4
-
-      - name: Python mühitini quraşdır
-        uses: actions/setup-python@v5
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
-          python-version: "3.11"
-
-      - name: Build skriptini icra et
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Validate
         run: |
-          if [ -f blog/build.py ]; then
-            python blog/build.py
-          else
-            echo "Build skripti tapılmadı."
-          fi
+          npm run typecheck
+          npm run lint
+          npm test
+      - name: Build
+        run: npm run build
+      - name: Configure GitHub Pages fallback
+        run: cp dist/index.html dist/404.html
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
 
-      - name: Statusu yoxla
-        run: echo "Build prosesi uğurla tamamlandı."
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

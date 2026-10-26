@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bahruzmammad.github.io/blog/sitemap.xml
