@@ -362,20 +362,37 @@ $(function () {
       $themeColor.attr("content", theme === "dark" ? "#000000" : "#ffffff");
     }
   }
-
   function updateThemeButton(theme) {
     if (!$themeToggle.length) return;
+
     const isDark = theme === "dark";
-    $themeToggle.find(".theme-icon").text(isDark ? "\u2600" : "\u263e");
+
+    const moonIcon = `
+      <svg viewBox="0 0 36 36" width="22" height="22"
+           fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M31 27.19a1 1 0 0 0-1-.56c-.28 0-.56 0-.85 0A11 11 0 0 1 24.92 5.61a1 1 0 0 0 .61-1 1 1 0 0 0-.67-.91 14.7 14.7 0 0 0-5-.87 15.12 15.12 0 0 0 0 30.24 14.78 14.78 0 0 0 11-4.81A1 1 0 0 0 31 27.19ZM19.89 31.12a13.12 13.12 0 0 1 0-26.24 11.81 11.81 0 0 1 2 .16 13 13 0 0 0 5.72 23.53 12.75 12.75 0 0 1-7.72 2.55Z"/>
+      </svg>`;
+
+    const sunIcon = `
+      <svg viewBox="0 0 36 36" width="22" height="22"
+           fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="18" cy="18" r="6"/>
+        <g stroke="currentColor" stroke-width="2.5"
+           stroke-linecap="round">
+          <path d="M18 3v4 M18 29v4 M3 18h4 M29 18h4
+                   M7.4 7.4l2.8 2.8 M25.8 25.8l2.8 2.8
+                   M28.6 7.4l-2.8 2.8 M10.2 25.8l-2.8 2.8"/>
+        </g>
+      </svg>`;
+
+    $themeToggle.find(".theme-icon").html(isDark ? sunIcon : moonIcon);
+
     $themeToggle.attr("aria-pressed", String(isDark));
-    $themeToggle.attr(
-      "aria-label",
-      isDark ? "Switch to light mode" : "Switch to dark mode",
-    );
-    $themeToggle.attr(
-      "title",
-      isDark ? "Switch to light mode" : "Switch to dark mode",
-    );
+
+    const label = isDark ? "Switch to light mode" : "Switch to dark mode";
+
+    $themeToggle.attr("aria-label", label);
+    $themeToggle.attr("title", label);
   }
 
   function applyTheme(theme) {
