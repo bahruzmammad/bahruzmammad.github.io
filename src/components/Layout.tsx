@@ -134,11 +134,7 @@ export function Header({
               aria-expanded={menuOpen}
               aria-controls="main-menu"
               onClick={() => {
-                setMenuOpen(
-                  window.innerWidth <= 800
-                    ? !menuOpen
-                    : false,
-                );
+                setMenuOpen((open) => window.innerWidth <= 800 && !open);
               }}
             >
               <span />

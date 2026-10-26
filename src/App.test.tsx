@@ -120,6 +120,18 @@ describe("application routes and interactions", () => {
     act(() => toggle.click());
     expect(toggle.getAttribute("aria-expanded")).toBe("false");
     expect(menu.classList.contains("is-open")).toBe(false);
+
+    act(() => toggle.click());
+    act(() => {
+      document.dispatchEvent(new KeyboardEvent("keydown", { key: "Escape" }));
+    });
+    expect(toggle.getAttribute("aria-expanded")).toBe("false");
+    expect(document.activeElement).toBe(toggle);
+
+    act(() => toggle.click());
+    act(() => document.body.click());
+    expect(toggle.getAttribute("aria-expanded")).toBe("false");
+    expect(menu.classList.contains("is-open")).toBe(false);
   });
 
   it("renders the blog index, an existing post, and the not-found route", async () => {

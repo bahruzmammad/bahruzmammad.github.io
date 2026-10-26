@@ -1721,7 +1721,7 @@ html[data-theme="dark"] .contact-button:hover:not(:disabled) {
             opacity 0.01ms !important;
     }
 }
-/* MOBILE HAMBURGER NAVIGATION */
+/* HAMBURGER NAVIGATION */
 
 .menu-toggle {
     display: none;
@@ -1776,68 +1776,7 @@ html[data-theme="dark"] .contact-button:hover:not(:disabled) {
     transform: translateY(-5.5px) rotate(-45deg);
 }
 
-@media (max-width: 800px) {
-    .nav-right {
-        position: relative;
-        gap: 8px;
-    }
-
-    .menu-toggle {
-        display: inline-flex;
-    }
-
-    .nav-list {
-        position: absolute;
-        top: calc(100% + 8px);
-        right: 0;
-        z-index: 1001;
-        display: none;
-        width: min(200px, calc(100vw - 32px));
-        max-height: calc(100vh - var(--header-height) - 24px);
-        flex-direction: column;
-        align-items: stretch;
-        gap: 2px;
-        padding: 8px;
-        overflow-x: hidden;
-        overflow-y: auto;
-        background: var(--surface);
-        border: 1px solid var(--border);
-        border-radius: var(--radius-md);
-        box-shadow: var(--shadow-card);
-    }
-
-    .nav-list.is-open {
-        display: flex;
-    }
-
-    .nav-list li {
-        width: 100%;
-    }
-
-    .nav-list a {
-        display: block;
-        width: 100%;
-        padding: 10px 12px;
-        border-radius: var(--radius-sm);
-    }
-
-    .nav-list a::after {
-        display: none;
-    }
-}
-
-@media (max-width: 430px) {
-    .menu-toggle {
-        width: 30px;
-        height: 30px;
-    }
-
-    .menu-toggle span {
-        width: 17px;
-    }
-}
-
-/* RESPONSIVE NAVIGATION FINAL FIX */
+/* RESPONSIVE NAVIGATION */
 
 .nav-right {
     margin-left: auto;
