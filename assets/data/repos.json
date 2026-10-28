@@ -1,5 +1,16 @@
 [
   {
+    "name": "rpg-inventory",
+    "description": "An educational dark-fantasy RPG inventory game built with React, Vite, and Redux Toolkit. Practice character progression, inventory management, equipment, turn-based combat, shops, quests, and local save/load.",
+    "language": "CSS",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "homepage": null,
+    "html_url": "https://github.com/bahruzmammad/rpg-inventory",
+    "visibility": "public",
+    "private": false
+  },
+  {
     "name": "bahruzmammad.github.io",
     "description": "Responsive website built with HTML, CSS, and JavaScript.",
     "language": "HTML",
