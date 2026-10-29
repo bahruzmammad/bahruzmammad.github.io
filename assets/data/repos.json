@@ -1,12 +1,23 @@
 [
   {
-    "name": "rpg-inventory",
-    "description": "An educational dark-fantasy RPG inventory game built with React, Vite, and Redux Toolkit. Practice character progression, inventory management, equipment, turn-based combat, shops, quests, and local save/load.",
-    "language": "CSS",
+    "name": "zedlive-server",
+    "description": "A high-performance, native Rust-based Live Server extension for Zed Editor.",
+    "language": "Rust",
     "stargazers_count": 0,
     "forks_count": 0,
     "homepage": null,
-    "html_url": "https://github.com/bahruzmammad/rpg-inventory",
+    "html_url": "https://github.com/bahruzmammad/zedlive-server",
+    "visibility": "public",
+    "private": false
+  },
+  {
+    "name": "extensions",
+    "description": "Extensions for the Zed editor",
+    "language": null,
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "homepage": null,
+    "html_url": "https://github.com/bahruzmammad/extensions",
     "visibility": "public",
     "private": false
   },
