@@ -1,16 +1,5 @@
 [
   {
-    "name": "termi-jump",
-    "description": "A simple terminal-based platform jumping game written in Java.",
-    "language": "Java",
-    "stargazers_count": 0,
-    "forks_count": 0,
-    "homepage": null,
-    "html_url": "https://github.com/bahruzmammad/termi-jump",
-    "visibility": "public",
-    "private": false
-  },
-  {
     "name": "bahruzmammad.github.io",
     "description": "Responsive website built with HTML, CSS, and JavaScript.",
     "language": "HTML",
@@ -18,6 +7,17 @@
     "forks_count": 0,
     "homepage": "https://bahruzmammad.github.io/",
     "html_url": "https://github.com/bahruzmammad/bahruzmammad.github.io",
+    "visibility": "public",
+    "private": false
+  },
+  {
+    "name": "termi-jump",
+    "description": "A simple terminal-based platform jumping game written in Java.",
+    "language": "Java",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "homepage": null,
+    "html_url": "https://github.com/bahruzmammad/termi-jump",
     "visibility": "public",
     "private": false
   },
