@@ -1,5 +1,16 @@
 [
   {
+    "name": "omarchy",
+    "description": "Beautiful, Modern & Opinionated Linux",
+    "language": null,
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "homepage": "https://omarchy.org",
+    "html_url": "https://github.com/bahruzmammad/omarchy",
+    "visibility": "public",
+    "private": false
+  },
+  {
     "name": "bahruzmammad.github.io",
     "description": "Responsive website built with HTML, CSS, and JavaScript.",
     "language": "HTML",
